@@ -14,27 +14,18 @@ Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri ser
 using namespace std;
 
 int main () {
-    int a;
-    int b;
+    float a;
+    float b;
     
-    cout << "Masukan angka1: ";
+    cout << "Masukan 1: ";
     cin >> a;
-    cout << "Masukan angka2: ";
+    cout << "Masukan 2: ";
     cin >> b;
 
-    //operator aritmatika
     cout << "a + b = " << (a+b) << endl;
     cout << "a - b = " << (a-b) << endl;
     cout << "a * b = " << (a*b) << endl;
-    cout << "a % b = " << (a%b) << endl;
-
-    //Operator logika
-    cout << "a > b = " << (a>b) << endl;
-    cout << "a < b = " << (a<b) << endl;
-    cout << "a >= b = " << (a>=b) << endl;
-    cout << "a <= b = " << (a<=b) << endl;
-    cout << "a == b = " << (a==b) << endl;
-    cout << "a != b = " << (a!=b) << endl;
+    cout << "a / b = " << (a/b) << endl;
     return 0;
 }
 ```
