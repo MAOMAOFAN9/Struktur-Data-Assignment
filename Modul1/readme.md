@@ -7,14 +7,21 @@ Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri ser
 
 ## Guided 
 
-### 1. [Nama Topik]
+### 1. [Contoh 1]
 
 ```C++
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+int main () {
+    int n;
+    const float pi = 3.14;
+
+    cout << "Masukan Angka: ";
+    cin >> n ;
+
+    cout << "Angka dikeluarkan: " << n << endl;
+    cout << "Nilai konstanta pi: " << pi << endl;
     return 0;
 }
 ```
