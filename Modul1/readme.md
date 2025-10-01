@@ -7,18 +7,38 @@ Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri ser
 
 ## Guided 
 
-### 1. [Nama Topik]
+### 1. [Contoh Latihan]
 
 ```C++
 #include <iostream>
 using namespace std;
 
-int main() {
-    cout << "ini adalah file code guided praktikan" << endl;
+int main () {
+    int a;
+    int b;
+    
+    cout << "Masukan angka1: ";
+    cin >> a;
+    cout << "Masukan angka2: ";
+    cin >> b;
+
+    //operator aritmatika
+    cout << "a + b = " << (a+b) << endl;
+    cout << "a - b = " << (a-b) << endl;
+    cout << "a * b = " << (a*b) << endl;
+    cout << "a % b = " << (a%b) << endl;
+
+    //Operator logika
+    cout << "a > b = " << (a>b) << endl;
+    cout << "a < b = " << (a<b) << endl;
+    cout << "a >= b = " << (a>=b) << endl;
+    cout << "a <= b = " << (a<=b) << endl;
+    cout << "a == b = " << (a==b) << endl;
+    cout << "a != b = " << (a!=b) << endl;
     return 0;
 }
 ```
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk menerima dua input angka dari pengguna, lalu menampilkan hasil operasi aritmatika dan logika menggunakan function cout untuk mengeksekusinya.
 
 ## Unguided 
 
