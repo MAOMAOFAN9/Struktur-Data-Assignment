@@ -11,8 +11,8 @@ int main () {
     cin >> b;
 
     //operator aritmatika
-    cout << "a - b = " << (a+b) << endl;
-    cout << "a * b = " << (a-b) << endl;
-    cout << "a / b = " << (a*b) << endl;
+    cout << "bilangan1 - bilangan2 = " << (a+b) << endl;
+    cout << "bilangan1 * bilangan2 = " << (a-b) << endl;
+    cout << "bilangan1 / bilangan2 = " << (a*b) << endl;
     return 0;
 }
