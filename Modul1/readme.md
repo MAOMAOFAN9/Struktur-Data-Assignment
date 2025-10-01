@@ -5,13 +5,17 @@
 
 Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri serta susunan yang terstruktur per topiknya.
 
-Perulagan
-
+1. Perulagan
 Perulangan digunakan untuk menyederhanakan program dengan menjalankan bagian yang sama secara berulang. Dan diperlukan intruksi penghenti agar proses bisa berhenti.
 dan terdapat beberapa perulangan seperti (for, while, do-while)
 untuk for, normal digunakan untuk perulangan yang tahu ingin mengulang berapa kali.
 jika while, digunakan untuk hasil yang tidak pasti, bisa lebih dari 2 _output_. dan ada syarat tertentu sebagai _trigger_ untuk mendapat hasil tertentu.
 sedangkan untuk do-while sama seperti while, tapi program akan menjalankannya setidaknya sekali walaupun syarat yang diminta salah.
+
+2. Struktur
+struktur bisa digunakan untuk mengelompokan variabel dan tipe data.
+struktur juga bisa digunakan diisi array.
+struktur juga bisa menyimpan struktur lain yang menyimpan variabel dan tipe data.
 
 ## Guided 
 
