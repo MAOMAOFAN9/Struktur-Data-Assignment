@@ -7,27 +7,7 @@ Berikan penjelasan teori terkait materi modul ini dengan bahasa anda sendiri ser
 
 ## Guided 
 
-### 1. [Contoh 1]
-
-```C++
-#include <iostream>
-using namespace std;
-
-int main () {
-    int n;
-    const float pi = 3.14;
-
-    cout << "Masukan Angka: ";
-    cin >> n ;
-
-    cout << "Angka dikeluarkan: " << n << endl;
-    cout << "Nilai konstanta pi: " << pi << endl;
-    return 0;
-}
-```
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
-
-### 1. [Contoh 2]
+### 1. [Contoh Latihan]
 
 ```C++
 #include <iostream>
@@ -58,6 +38,7 @@ int main () {
     return 0;
 }
 ```
+Kode di atas digunakan untuk menerima dua input angka dari pengguna, lalu menampilkan hasil operasi aritmatika dan logika menggunakan function cout untuk mengeksekusinya.
 
 ## Unguided 
 
