@@ -79,7 +79,7 @@ int main () {
 #### Output:
 <img width="1102" height="180" alt="Image" src="https://github.com/user-attachments/assets/b696477b-896f-441c-a56a-f234e5b59552" />
 
-Kode di atas digunakan untuk mencetak teks "ini adalah file code guided praktikan" ke layar menggunakan function cout untuk mengeksekusi nya.
+Kode di atas digunakan untuk menerima dua input angka dari pengguna, lalu menampilkan hasil operasi aritmatika dasar (penjumlahan, pengurangan, perkalian, dan pembagian) menggunakan cout.
 
 #### Full code Screenshot:
 <img width="1917" height="1130" alt="image" src="https://github.com/user-attachments/assets/123e5b84-a175-4e64-8b75-3581f99e633f" />
@@ -93,6 +93,13 @@ using namespace std;
 int main () {
 
 ```
+#### Output:
+<img width="1102" height="180" alt="Image" src="https://github.com/user-attachments/assets/b696477b-896f-441c-a56a-f234e5b59552" />
+
+Kode di atas digunakan untuk menerima dua input angka dari pengguna, lalu menampilkan hasil operasi aritmatika dasar (penjumlahan, pengurangan, perkalian, dan pembagian) menggunakan cout.
+
+#### Full code Screenshot:
+<img width="1917" height="1130" alt="image" src="https://github.com/user-attachments/assets/123e5b84-a175-4e64-8b75-3581f99e633f" />
 
 ### 3. [Soal 3]
 
@@ -103,7 +110,13 @@ using namespace std;
 int main () {
 
 ```
+#### Output:
+<img width="1102" height="180" alt="Image" src="https://github.com/user-attachments/assets/b696477b-896f-441c-a56a-f234e5b59552" />
 
+Kode di atas digunakan untuk menerima dua input angka dari pengguna, lalu menampilkan hasil operasi aritmatika dasar (penjumlahan, pengurangan, perkalian, dan pembagian) menggunakan cout.
+
+#### Full code Screenshot:
+<img width="1917" height="1130" alt="image" src="https://github.com/user-attachments/assets/123e5b84-a175-4e64-8b75-3581f99e633f" />
 
 ## Kesimpulan
 Ringkasan dan interpretasi pandangan kalia dari hasil praktikum dan pembelajaran yang didapat[1].
