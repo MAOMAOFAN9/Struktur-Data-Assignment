@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
 
-// Fungsi untuk konversi angka ke kata (0 - 100)
 string angkaKeTulisan(int n) {
     string satuan[] = {"nol", "satu", "dua", "tiga", "empat",
                        "lima", "enam", "tujuh", "delapan", "sembilan",
