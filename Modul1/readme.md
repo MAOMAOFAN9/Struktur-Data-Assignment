@@ -173,7 +173,7 @@ int main() {
 #### Output:
 <img width="1273" height="155" alt="3ops" src="https://github.com/user-attachments/assets/3fc7c11b-247f-40e9-aea0-6c2fdbacc4f2" />
 
-Program ini menampilkan pola segitiga angka dengan simbol "*" di tengah. Angka di sisi kiri ditampilkan menurun, lalu di sisi kanan ditampilkan menaik. Spasi digunakan di awal baris agar pola terlihat rata, dan pada bagian akhir ditambahkan simbol "*" di tengah bawah sebagai penutup pola.
+Program ini menampilkan pola segitiga angka dengan simbol * di tengah. Angka di sisi kiri ditampilkan menurun, lalu di sisi kanan ditampilkan menaik. Spasi digunakan di awal baris agar pola terlihat rata, dan pada bagian akhir ditambahkan simbol * di tengah bawah sebagai penutup pola.
 
 #### Full code Screenshot:
 <img width="1919" height="1131" alt="3fss" src="https://github.com/user-attachments/assets/39943a9f-4e80-479e-80e8-b47f8fd19482" />
