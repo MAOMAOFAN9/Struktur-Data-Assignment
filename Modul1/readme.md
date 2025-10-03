@@ -186,4 +186,4 @@ Program ini menampilkan pola segitiga angka dengan simbol * di tengah. Angka di 
 Dari kode _guided_ dan _unguided_ yang dibuat, praktikum kali ini hanya belajar dasar-dasar C++ saja. Kode pertama buat operasi hitung sederhana, kode kedua mengubah angka jadi tulisan sampai 100, dan kode ketiga bikin pola angka dengan tanda * di tengah. Jadi kesimpulannya praktikum ini lebih ke latihan input-output, percabangan, sama perulangan supaya terbiasa pakai dasar pemrograman.
 
 ## Referensi
-[1]  Konsep Dasar Algoritma dan Pemograman Menggunakan C++ Chapter#1. Diakses pada 28 September 2025 melalui https://repository.unpkediri.ac.id/2466/1/55201_0701107802.pdf.
+[1]  Konsep Dasar Algoritma dan Pemograman Menggunakan C++ Chapter#1. Diakses pada 02 Oktober 2025 melalui https://repository.unpkediri.ac.id/2466/1/55201_0701107802.pdf.
