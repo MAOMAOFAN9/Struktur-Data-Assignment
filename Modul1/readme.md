@@ -3,14 +3,17 @@
 
 ## Dasar Teori
 
-1. Perulagan. <br> 
+1. Percabangan <br>
+Pernyataan seleksi kondisi (percabangan) yaitu melakukan pengujian untuk memilih satu dari beberapa alternatif yang tersedia. Seleksi kondisi, haruslah dapat menghasilkan nilai benar (true) atau nilai salah (false). Jika hasil seleksi kondisi bernilai benar, maka suatu pernyataan baru akan dikerjakan.
+
+2. Perulagan. <br> 
 Perulangan digunakan untuk menyederhanakan program dengan menjalankan bagian yang sama secara berulang. Dan diperlukan intruksi penghenti agar proses bisa berhenti.
 dan terdapat beberapa perulangan seperti (for, while, do-while).<br>
 untuk for, normal digunakan untuk perulangan yang tahu ingin mengulang berapa kali.<br>
 jika while, digunakan untuk hasil yang tidak pasti, bisa lebih dari 2 _output_. dan ada syarat tertentu sebagai _trigger_ untuk mendapat hasil tertentu.<br>
 sedangkan untuk do-while sama seperti while, tapi program akan menjalankannya setidaknya sekali walaupun syarat yang diminta salah.
 
-2. Struktur. <br>
+3. Struktur. <br>
 struktur bisa digunakan untuk mengelompokan variabel dan tipe data.<br>
 struktur juga bisa diisi dengan array.<br>
 struktur juga bisa menyimpan struktur lain yang menyimpan variabel dan tipe data.<br>
@@ -183,4 +186,4 @@ Program ini menampilkan pola segitiga angka dengan simbol * di tengah. Angka di 
 Dari kode _guided_ dan _unguided_ yang dibuat, praktikum kali ini hanya belajar dasar-dasar C++ saja. Kode pertama buat operasi hitung sederhana, kode kedua mengubah angka jadi tulisan sampai 100, dan kode ketiga bikin pola angka dengan tanda * di tengah. Jadi kesimpulannya praktikum ini lebih ke latihan input-output, percabangan, sama perulangan supaya terbiasa pakai dasar pemrograman.
 
 ## Referensi
-[1] I. Holm, Narrator, and J. Fullerton-Smith, Producer, How to Build a Human [DVD]. London: BBC; 2002.
+[1]  Konsep Dasar Algoritma dan Pemograman Menggunakan C++ Chapter#1. Diakses pada 28 September 2025 melalui https://repository.unpkediri.ac.id/2466/1/55201_0701107802.pdf.
