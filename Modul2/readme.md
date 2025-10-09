@@ -259,7 +259,7 @@ Program ini menukar nilai tiga variabel menggunakan pointer dan reference. Nilai
 
 
 
-### 3. [Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari {array 11, 8, 5, 7, 12, 26, 3, 54, 33, 55}]
+### 3. [Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari arrayA {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}]
 
 ```C++
 #include <iostream>
@@ -349,6 +349,7 @@ Pada pertemuan ini, mahasiswa mempelajari cara membuat menu sederhana yang beris
 [1] Algoritma dan Pemrograman: Konsep Dasar, Logika, dan Implementasi dengan C++ & Phyton Oleh Rozzi Kesuma Dinata, Novia Hasdyna. Diakses pada 9 Oktober 2025 melalui https://books.google.co.id/books?hl=id&lr=&id=6kBlEQAAQBAJ&oi=fnd&pg=PA1&dq=bahasa+pemrograman+c%2B%2B+array+2+dimensi&ots=bk_HFcsTHF&sig=Mu99cJIpT_eMiFE9BXV2aFZko5E&redir_esc=y#v=onepage&q&f=false.
 
 [2] Belajar C++ #14: Memahami Pointer di C++ Oleh Ahmad Muhardian. Diakses pada 9 Oktober 2025 melalului https://www.petanikode.com/cpp-pointer/
+
 
 
 
