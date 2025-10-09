@@ -212,93 +212,57 @@ Program ini melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua m
 <img width="1917" height="1136" alt="Screenshot 2025-10-09 080907" src="https://github.com/user-attachments/assets/c6e29257-18f5-45b1-acae-9aeb6ffb6e2c" />
 
 
-### 2. [Soal 2]
+### 2. [Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel.]
 
 ```C++
 #include <iostream>
 using namespace std;
 
 
-string bilangan (int angka) {
-    
-    string satuan[] = {"nol","satu","dua","tiga","empat","lima","enam","tujuh","delapan","sembilan"};
- 
-    if (angka == 0) return "nol";
-    if (angka == 10) return "sepuluh";
-    if (angka == 11) return "sebelas";
-    if (angka < 10) return satuan[angka];                
-    if (angka < 20) return satuan[angka % 10] + " belas";  
-
-     
-    if (angka < 100) {
-        int puluhan = angka / 10;   
-        int sisa = angka % 10;      
-        string kataPuluhan[] = {"","", "dua puluh","tiga puluh","empat puluh","lima puluh","enam puluh","tujuh puluh","delapan puluh","sembilan puluh"};
-        if (sisa == 0) return kataPuluhan[puluhan];        
-        return kataPuluhan[puluhan] + " " + satuan[sisa];  
-    }
-
-    if (angka == 100) return "seratus";  
-    return ""; 
+void tukarPointer(int *a, int *b, int *c) {
+    int temp = *a;   
+    *a = *b;         
+    *b = *c;         
+    *c = temp;     
 }
-
+void tukarReference(int &a, int &b, int &c) {
+    int temp = a;   
+    a = b;          
+    b = c;           
+    c = temp;       
+}
 int main() {
-    int angka;
+    int x = 10, y = 20, z = 30;
 
-    cout << "Angka: ";
-    cin >> angka;
- 
-    if (angka < 0 || angka > 100) {
-        cout << "Hanya angka 0-100" << endl;
-    } else { 
-        cout << "Hasil: " << bilangan(angka) << endl;
-    }
+    cout << "Sebelum ditukar:" << endl;
+    cout << "x = " << x << ", y = " << y << ", z = " << z << endl;
+
+    tukarPointer(&x, &y, &z);
+    cout << "\nSetelah ditukar dengan Pointer:" << endl;
+    cout << "x = " << x << ", y = " << y << ", z = " << z << endl;
+
+    tukarReference(x, y, z);
+    cout << "\nSetelah ditukar dengan Reference:" << endl;
+    cout << "x = " << x << ", y = " << y << ", z = " << z << endl;
 
     return 0;
 }
 ```
 #### Output:
-<img width="1434" height="149" alt="2ops" src="https://github.com/user-attachments/assets/b8124050-2b7d-4c0f-92ec-9888ed044308" />
+<img width="1261" height="253" alt="oss2" src="https://github.com/user-attachments/assets/b58ffb5a-b0ab-418c-87b1-07a1444cbc34" />
 
-Program ini dipakai untuk mengubah angka 0 sampai 100 jadi tulisan. Aturannya ada di fungsi bilangan(), misalnya 1 jadi “satu”, 15 jadi “lima belas”, atau 100 jadi “seratus”. Di main(), program minta input angka, dicek apakah masih dalam 0–100, lalu hasil tulisannya ditampilkan.
+Program ini menukar nilai tiga variabel menggunakan pointer dan reference. Nilai awal x, y, dan z ditukar melalui fungsi tukarPointer dengan mengirim alamat variabel, lalu ditukar lagi dengan tukarReference menggunakan referensi langsung. Hasil sebelum dan sesudah pertukaran ditampilkan untuk menunjukkan perubahan nilai pada ketiga variabel.
 
 #### Full code Screenshot:
-<img width="1918" height="1131" alt="2fss" src="https://github.com/user-attachments/assets/d9e89e3f-1000-44cb-b9f0-9f7886b0cc9a" />
+<img width="1919" height="1136" alt="fss2" src="https://github.com/user-attachments/assets/9850fd52-6a2a-45fd-a689-24e60b30bda9" />
 
 
-### 3. [Soal 3]
+
+### 3. [Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel.]
 
 ```C++
 #include <iostream>
-using namespace std;
 
-int main() {
-    int n;
-    cin >> n;
-
-    for (int i = n; i >= 1; i--) {
-        for (int s = 0; s < n - i; s++) {
-            cout << "  ";
-        }
-
-        for (int j = i; j >= 1; j--) {
-            cout << j << " ";
-        }
-
-        cout << "* ";
-
-        for (int j = 1; j <= i; j++) {
-            cout << j << " ";
-        }
-
-        cout << endl;
-    }
-    
-    for (int s = 0; s < n; s++) cout << "  ";
-    cout << "*" << endl;
-
-    return 0;
-}
 ```
 #### Output:
 <img width="1273" height="155" alt="3ops" src="https://github.com/user-attachments/assets/3fc7c11b-247f-40e9-aea0-6c2fdbacc4f2" />
@@ -310,12 +274,13 @@ Program ini menampilkan pola segitiga angka dengan simbol * di tengah. Angka di 
 
 
 ## Kesimpulan
-Dari kode _guided_ dan _unguided_ yang dibuat, praktikum kali ini hanya belajar dasar-dasar C++ saja. Kode pertama buat operasi hitung sederhana, kode kedua mengubah angka jadi tulisan sampai 100, dan kode ketiga bikin pola angka dengan tanda * di tengah. Jadi kesimpulannya praktikum ini lebih ke latihan input-output, percabangan, sama perulangan supaya terbiasa pakai dasar pemrograman.
+Pada pertemuan ini, mahasiswa mempelajari cara membuat menu sederhana yang berisi beberapa fungsi dan prosedur, serta bagaimana mengubah nilai variabel menggunakan dua metode berbeda, yaitu melalui pointer dan reference.
 
 ## Referensi
 [1] Algoritma dan Pemrograman: Konsep Dasar, Logika, dan Implementasi dengan C++ & Phyton Oleh Rozzi Kesuma Dinata, Novia Hasdyna. Diakses pada 9 Oktober 2025 melalui https://books.google.co.id/books?hl=id&lr=&id=6kBlEQAAQBAJ&oi=fnd&pg=PA1&dq=bahasa+pemrograman+c%2B%2B+array+2+dimensi&ots=bk_HFcsTHF&sig=Mu99cJIpT_eMiFE9BXV2aFZko5E&redir_esc=y#v=onepage&q&f=false.
 
 [2] Belajar C++ #14: Memahami Pointer di C++ Oleh Ahmad Muhardian. Diakses pada 9 Oktober 2025 melalului https://www.petanikode.com/cpp-pointer/
+
 
 
 
