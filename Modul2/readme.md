@@ -139,29 +139,78 @@ Program ini menunjukkan penggunaan reference dan pointer. Variabel ref menjadi a
 #include <iostream>
 using namespace std;
 
-int main () {
-    float a;
-    float b;
-    
-    cout << "Masukan 1: ";
-    cin >> a;
-    cout << "Masukan 2: ";
-    cin >> b;
+void tampilkanHasil(int arr[3][3]){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
 
-    cout << "a + b = " << (a+b) << endl;
-    cout << "a - b = " << (a-b) << endl;
-    cout << "a * b = " << (a*b) << endl;
-    cout << "a / b = " << (a/b) << endl;
+int main(){
+    int arrA[3][3] = {
+        {5, 2, 2},
+        {3, 9, 7},
+        {6, 1, 8}
+    };
+    int arrB[3][3] = {
+        {2, 3, 1},
+        {4, 5, 9},
+        {1, 0, 2}
+    };
+    int arrC[3][3] = {0}; 
+    int arrD[3][3] = {0};
+    int arrE[3][3] = {0};
+
+    
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            arrC[i][j] = arrA[i][j] + arrB[i][j];
+        }
+    }
+
+    cout << "Hasil penjumlahan : " << endl;
+    tampilkanHasil(arrC);
+
+    cout << endl;
+
+ 
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+            arrD[i][j] = arrA[i][j] - arrB[i][j];
+        }
+    }
+
+    cout << "Hasil pengurangan : " << endl;
+    tampilkanHasil(arrD);
+
+    cout << endl;
+
+
+    for (int i = 0; i < 3; i++) {            
+        for (int j = 0; j < 3; j++) {       
+            for (int k = 0; k < 3; k++) {  
+                arrE[i][j] += arrA[i][k] * arrB[k][j];
+            }
+        }
+    }
+
+    cout << "Hasil perkalian : " << endl;
+    tampilkanHasil(arrE);
+
     return 0;
 }
 ```
 #### Output:
-<img width="1102" height="180" alt="Image" src="https://github.com/user-attachments/assets/b696477b-896f-441c-a56a-f234e5b59552" />
+<img width="1269" height="373" alt="Screenshot 2025-10-09 080558" src="https://github.com/user-attachments/assets/803c1c48-0225-4448-aec1-8fdf791c0aa4" />
 
-Program ini dipakai untuk menerima dua angka dari pengguna lalu menampilkan hasil penjumlahan, pengurangan, perkalian, dan pembagiannya. Input dibaca lewat cin, kemudian hasil operasi ditampilkan ke layar dengan cout.
+
+Program ini melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua matriks 3x3. Matriks arrA dan arrB berisi data awal, sedangkan arrC, arrD, dan arrE digunakan untuk menyimpan hasil. Penjumlahan dan pengurangan dilakukan dengan dua perulangan, sementara perkalian menggunakan tiga perulangan bersarang untuk menghitung hasil sesuai aturan matriks. Program menampilkan semua hasil dengan fungsi tampilkanHasil.
 
 #### Full code Screenshot:
-<img width="1917" height="1130" alt="image" src="https://github.com/user-attachments/assets/123e5b84-a175-4e64-8b75-3581f99e633f" />
+<img width="1917" height="1136" alt="Screenshot 2025-10-09 080907" src="https://github.com/user-attachments/assets/c6e29257-18f5-45b1-acae-9aeb6ffb6e2c" />
+
 
 ### 2. [Soal 2]
 
@@ -267,6 +316,7 @@ Dari kode _guided_ dan _unguided_ yang dibuat, praktikum kali ini hanya belajar 
 [1] Algoritma dan Pemrograman: Konsep Dasar, Logika, dan Implementasi dengan C++ & Phyton Oleh Rozzi Kesuma Dinata, Novia Hasdyna. Diakses pada 9 Oktober 2025 melalui https://books.google.co.id/books?hl=id&lr=&id=6kBlEQAAQBAJ&oi=fnd&pg=PA1&dq=bahasa+pemrograman+c%2B%2B+array+2+dimensi&ots=bk_HFcsTHF&sig=Mu99cJIpT_eMiFE9BXV2aFZko5E&redir_esc=y#v=onepage&q&f=false.
 
 [2] Belajar C++ #14: Memahami Pointer di C++ Oleh Ahmad Muhardian. Diakses pada 9 Oktober 2025 melalului https://www.petanikode.com/cpp-pointer/
+
 
 
 
