@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul Pengenalan Bahasa C++ (2)</h1>
+# <h1 align="center">Laporan Praktikum Modul 2 Pengenalan Bahasa C++ (Bagian Kedua) (2)</h1>
 <p align="center">Rafhael Januar Turnip</p>
 
 ## Dasar Teori
@@ -349,6 +349,7 @@ Pada pertemuan ini, mahasiswa mempelajari cara membuat menu sederhana yang beris
 [1] Algoritma dan Pemrograman: Konsep Dasar, Logika, dan Implementasi dengan C++ & Phyton Oleh Rozzi Kesuma Dinata, Novia Hasdyna. Diakses pada 9 Oktober 2025 melalui https://books.google.co.id/books?hl=id&lr=&id=6kBlEQAAQBAJ&oi=fnd&pg=PA1&dq=bahasa+pemrograman+c%2B%2B+array+2+dimensi&ots=bk_HFcsTHF&sig=Mu99cJIpT_eMiFE9BXV2aFZko5E&redir_esc=y#v=onepage&q&f=false.
 
 [2] Belajar C++ #14: Memahami Pointer di C++ Oleh Ahmad Muhardian. Diakses pada 9 Oktober 2025 melalului https://www.petanikode.com/cpp-pointer/
+
 
 
 
