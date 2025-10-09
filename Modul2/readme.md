@@ -20,42 +20,120 @@ struktur juga bisa menyimpan struktur lain yang menyimpan variabel dan tipe data
 
 ## Guided 
 
-### 1. [Contoh Latihan]
+### 1. [Array]
+
+```C++
+#include <iostream>
+
+using namespace std;
+
+int main () {
+    // array 1 dimensi
+    int arrID[5] = {10,20,30,40,50};
+    cout << "Array 1 Dimensi" << endl;
+    for (int i=0; i<5; i++) {
+        cout << "arrID" << i << " = " << arrID[i] << endl; 
+        
+    }
+    cout << endl;
+
+    // array 2 dimensi baris & kolom
+    int arr2D[2][3] = {
+        {1,2,3},
+        {4,5,6}
+    };
+    cout << "Array 2 Dimensi" << endl;
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<3; j++) {
+            cout << "arr2D[" << i << "}[" << j << "] = " << arr2D[i][j]
+            << " ";
+        }
+        cout << endl;
+    }
+    cout << endl;
+    
+    //array multi dimensi (3D)
+    int arr3D[2][2][3] = {
+    { { 1, 2, 3 }, {4, 5, 6} },
+    { { 7, 8, 9} , {10, 11, 12} }   
+    };
+    cout << "array 3 dimensi" << endl;
+    for (int i=0; i<2; i++) {
+        for (int j=0; j<2; j++) {
+            for (int k=0; k<3; k++) {
+                cout << "arr3D[" << i << "][" << j << "]["
+                << k << "] = " << arr3D[i][j][k] << endl;
+            }
+        }
+    }
+
+    return 0;
+}
+```
+Program ini digunakan untuk menampilkan isi array satu, dua, dan tiga dimensi. Pertama, array arrID berisi lima elemen ditampilkan dengan perulangan. Lalu, array dua dimensi arr2D berukuran dua baris dan tiga kolom ditampilkan menggunakan dua loop bersarang. Terakhir, array tiga dimensi arr3D berisi angka 1–12 ditampilkan dengan tiga loop bersarang. Secara keseluruhan, program ini hanya menunjukkan cara mendeklarasikan dan menampilkan array dengan berbagai dimensi menggunakan perulangan.
+
+### 2. [Prosedur dan Fungsi]
 
 ```C++
 #include <iostream>
 using namespace std;
 
-int main () {
-    int a;
-    int b;
-    
-    cout << "Masukan angka1: ";
-    cin >> a;
-    cout << "Masukan angka2: ";
-    cin >> b;
+    void tulis (int x) {
+        for (int i = 1; i < x; i++){
+            cout << "Baris ke-" << i << endl;
+        }
+}
 
-    //operator aritmatika
-    cout << "a + b = " << (a+b) << endl;
-    cout << "a - b = " << (a-b) << endl;
-    cout << "a * b = " << (a*b) << endl;
-    cout << "a % b = " << (a%b) << endl;
-
-    //Operator logika
-    cout << "a > b = " << (a>b) << endl;
-    cout << "a < b = " << (a<b) << endl;
-    cout << "a >= b = " << (a>=b) << endl;
-    cout << "a <= b = " << (a<=b) << endl;
-    cout << "a == b = " << (a==b) << endl;
-    cout << "a != b = " << (a!=b) << endl;
+int main() {
+    int jum;
+    cout << "Jumlah Baris kata: ";
+    cin >> jum;
+    tulis(jum);
     return 0;
 }
 ```
-Kode di atas digunakan untuk menerima dua input angka dari pengguna, lalu menampilkan hasil operasi aritmatika dan logika menggunakan function cout untuk mengeksekusinya.
+Program ini meminta pengguna memasukkan jumlah baris, lalu menampilkan teks “Baris ke-” sesuai angka yang dimasukkan. Nilai input disimpan dalam variabel jum dan dikirim ke fungsi tulis, yang menggunakan perulangan for untuk menampilkan baris dari 1 sampai satu kurang dari jumlah yang dimasukkan.
+
+### 3. [Pointer]
+
+```C++
+#include <iostream>
+using namespace std;
+
+void tukar(int *x, int *y) {
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+}
+
+int main () {
+    int a = 20, b = 30;
+    int& ref = a;
+
+    cout << "Nilai a : " << a << endl;
+    cout << "Alamat a (&a) : " << &a << endl;
+    cout << "Nilai ref (alias a): " << ref << endl;
+    cout << "Alamat red (&ref): " << &ref << endl;
+
+
+    //mengubah nilai a lewar refrence
+    ref = 50;
+    cout << "\nSetelah ref = 50: " << endl;
+    cout << "Nilai a :" << a << endl;
+    cout << "Nilai ref :" << ref << endl;
+
+tukar(&a, &b);
+cout << "After swapping, value of a : " << a << " and b=" << b << endl;
+
+return 0;
+}
+```
+Program ini menunjukkan penggunaan reference dan pointer. Variabel ref menjadi alias dari a, sehingga perubahan pada ref juga mengubah nilai a. Setelah itu, fungsi tukar digunakan untuk menukar nilai a dan b dengan memanfaatkan pointer.
 
 ## Unguided 
 
-### 1. [Soal]
+### 1. [prosedur dan fungsi]
 
 ```C++
 #include <iostream>
@@ -187,3 +265,4 @@ Dari kode _guided_ dan _unguided_ yang dibuat, praktikum kali ini hanya belajar 
 
 ## Referensi
 [1]  Konsep Dasar Algoritma dan Pemograman Menggunakan C++ Chapter#1. Diakses pada 02 Oktober 2025 melalui https://repository.unpkediri.ac.id/2466/1/55201_0701107802.pdf.
+
