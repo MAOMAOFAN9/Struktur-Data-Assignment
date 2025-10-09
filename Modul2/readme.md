@@ -3,19 +3,19 @@
 
 ## Dasar Teori
 
-1. Array
+1. Array <br>
 Array merupakan suatu struktur data yang terdiri dari sekumpulan data dengan tipe data yang sama dan setiap data yang disimpan kedalam alamat memori disebun elemen array. Ada juga yang disebut array 2 dimensi yaitu perluasan dari konsep array satu dimensi dan array 2 dimensi ini berbentuk matriks dan elemen nya dibentuk dari baris dan kolom sehingga dapat mempresentasikan data yang lebih kompleks lagi.[1]
 
-2. Function
+2. Function <br>
 Function adalah sekumpulan perintah yang memiliki nama tertentu dan digunakan untuk menjalankan suatu tugas. Function dapat menerima input (parameter) dan dapat mengembalikan nilai sebagai hasil proses.
 
-3. Procedure
+3. Procedure <br>
 Procedure memiliki konsep serupa dengan function, namun tidak mengembalikan nilai. Biasanya digunakan untuk mengeksekusi serangkaian instruksi tanpa hasil balik.
 
-4. Pointer
+4. Pointer <br>
 pointer adalah variabel yang menyimpan alamat memori dari variabel lain. Pointer tidak menyimpan nilai langsung, tetapi lokasi di mana nilai itu berada. Operator & digunakan untuk mengambil alamat, sedangkan * digunakan untuk mengakses nilai di alamat tersebut. Pointer sering dipakai untuk pass by reference, manipulasi array, dan struct, namun harus digunakan hati-hati agar tidak menyebabkan error.[2]
 
-5. Reference
+5. Reference <br>
 Reference adalah variabel yang berfungsi sebagai nama lain dari variabel yang telah ada. Dengan reference, kita dapat bekerja langsung pada data aslinya tanpa membuat salinan baru.
 
 ## Guided 
@@ -212,6 +212,7 @@ Program ini melakukan operasi penjumlahan, pengurangan, dan perkalian pada dua m
 <img width="1917" height="1136" alt="Screenshot 2025-10-09 080907" src="https://github.com/user-attachments/assets/c6e29257-18f5-45b1-acae-9aeb6ffb6e2c" />
 
 
+
 ### 2. [Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel.]
 
 ```C++
@@ -348,6 +349,7 @@ Pada pertemuan ini, mahasiswa mempelajari cara membuat menu sederhana yang beris
 [1] Algoritma dan Pemrograman: Konsep Dasar, Logika, dan Implementasi dengan C++ & Phyton Oleh Rozzi Kesuma Dinata, Novia Hasdyna. Diakses pada 9 Oktober 2025 melalui https://books.google.co.id/books?hl=id&lr=&id=6kBlEQAAQBAJ&oi=fnd&pg=PA1&dq=bahasa+pemrograman+c%2B%2B+array+2+dimensi&ots=bk_HFcsTHF&sig=Mu99cJIpT_eMiFE9BXV2aFZko5E&redir_esc=y#v=onepage&q&f=false.
 
 [2] Belajar C++ #14: Memahami Pointer di C++ Oleh Ahmad Muhardian. Diakses pada 9 Oktober 2025 melalului https://www.petanikode.com/cpp-pointer/
+
 
 
 
