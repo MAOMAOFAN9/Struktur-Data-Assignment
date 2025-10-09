@@ -133,7 +133,7 @@ Program ini menunjukkan penggunaan reference dan pointer. Variabel ref menjadi a
 
 ## Unguided 
 
-### 1. [prosedur dan fungsi]
+### 1. [Buatlah program yang dapat melakukan operasi penjumlahan, pengurangan, dan perkalian matriks 3x3]
 
 ```C++
 #include <iostream>
@@ -265,4 +265,5 @@ Dari kode _guided_ dan _unguided_ yang dibuat, praktikum kali ini hanya belajar 
 
 ## Referensi
 [1]  Konsep Dasar Algoritma dan Pemograman Menggunakan C++ Chapter#1. Diakses pada 02 Oktober 2025 melalui https://repository.unpkediri.ac.id/2466/1/55201_0701107802.pdf.
+
 
