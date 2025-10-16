@@ -84,102 +84,137 @@ int main(){
 ```
 Bagian utama program yang menjalankan proses utama. Program akan memanggil inputMhs() untuk mengisi data mahasiswa, kemudian memanggil rata2() untuk menghitung rata-rata dan menampilkan hasilnya ke layar.
 
+Deskripsi Program: <br>
+Program ini menggunakan struct sebagai ADT untuk menyimpan data mahasiswa. Data diinput melalui fungsi inputMhs(), kemudian rata-rata dari dua nilai dihitung dengan fungsi rata2() dan ditampilkan ke layar.
+
 ## Unguided 
 
-### 1. [Buat program yang dapat menyimpan data mahasiswa]
-
-```C++
-##include <iostream>
-using namespace std;
-
-struct Mahasiswa {
-    string nama;
-    string nim;
-    float uts;
-    float uas;
-    float tugas;
-    float nilaiAkhir;
-};
-
-float hitungNilaiAkhir(float uts, float uas, float tugas) {
-    return (0.3 * uts) + (0.4 * uas) + (0.3 * tugas);
-}
-
-int main() {
-    Mahasiswa mhs[10];
-    int n;
-
-    cout << "Masukkan jumlah mahasiswa (maks 10): ";
-    cin >> n;
-    cout << endl;
-
-    if (n > 10) {
-        cout << "Jumlah mahasiswa melebihi batas!" << endl;
-        return 0;
-    }
-
-    for (int i = 0; i < n; i++) {
-        cout << "Data Mahasiswa ke-" << i + 1 << endl;
-        cout << "Nama   : ";
-        cin.ignore();
-        getline(cin, mhs[i].nama);
-        cout << "NIM    : ";
-        cin >> mhs[i].nim;
-        cout << "UTS    : ";
-        cin >> mhs[i].uts;
-        cout << "UAS    : ";
-        cin >> mhs[i].uas;
-        cout << "Tugas  : ";
-        cin >> mhs[i].tugas;
-
-        mhs[i].nilaiAkhir = hitungNilaiAkhir(mhs[i].uts, mhs[i].uas, mhs[i].tugas);
-
-        cout << endl;
-    }
-
-    cout << "\n=== Daftar Nilai Mahasiswa ===" << endl;
-    cout << "-----------------------------------------------" << endl;
-    cout << "No\tNIM\t\tNama\t\tNilai Akhir" << endl;
-    cout << "-----------------------------------------------" << endl;
-
-    for (int i = 0; i < n; i++) {
-        cout << i + 1 << "\t" << mhs[i].nim << "\t\t"
-             << mhs[i].nama << "\t\t"
-             << mhs[i].nilaiAkhir << endl;
-    }
-
-    return 0;
-}
-
-```
-#### Output:
-<img width="1269" height="373" alt="Screenshot 2025-10-09 080558" src="https://github.com/user-attachments/assets/803c1c48-0225-4448-aec1-8fdf791c0aa4" />
-
-Program ini menyimpan data mahasiswa dan menghitung nilai akhirnya dari UTS, UAS, dan tugas, lalu menampilkan hasilnya dalam tabel.
-
-#### Full code Screenshot:
-<img width="1917" height="1136" alt="Screenshot 2025-10-09 080907" src="https://github.com/user-attachments/assets/c6e29257-18f5-45b1-acae-9aeb6ffb6e2c" />
-
-
-
-### 2. Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel.]
+### 1. [Data Mahasiswa]
 
 ```C++
 #include <iostream>
 using namespace std;
 
+struct mhs{
+    string nama,nim;
+    float uts,uas,tugas,nilaiAkhir;
+};
 
-void tukarPointer(int *a, int *b, int *c) {
+float hitung(float u,float a,float t){
+    return (0.3*u)+(0.4*a)+(0.3*t);
+}
 
+int main(){
+    mhs M[10];
+    int n;
+    cout<<"Masukkan jumlah mahasiswa (max 10): ";
+    cin>>n;
+    if(n>10){
+        cout<<"Kebanyakan, max 10 aja\n";
+        return 0;
+    }
+    for(int i=0;i<n;i++){
+        cout<<"\nMahasiswa ke-"<<i+1<<endl;
+        cout<<"Nama : ";
+        cin.ignore();
+        getline(cin,M[i].nama);
+        cout<<"NIM  : ";
+        cin>>M[i].nim;
+        cout<<"UTS  : ";
+        cin>>M[i].uts;
+        cout<<"UAS  : ";
+        cin>>M[i].uas;
+        cout<<"Tugas: ";
+        cin>>M[i].tugas;
+        M[i].nilaiAkhir=hitung(M[i].uts,M[i].uas,M[i].tugas);
+    }
+    cout<<"\nDaftar Nilai Mahasiswa\n";
+    cout<<"-----------------------------\n";
+    cout<<"No\tNIM\t\tNama\t\tNilAkhir\n";
+    for(int i=0;i<n;i++){
+        cout<<i+1<<"\t"<<M[i].nim<<"\t\t"<<M[i].nama<<"\t\t"<<M[i].nilaiAkhir<<endl;
+    }
+    return 0;
+}
 ```
 #### Output:
-<img width="1261" height="253" alt="oss2" src="https://github.com/user-attachments/assets/b58ffb5a-b0ab-418c-87b1-07a1444cbc34" />
+<img width="1262" height="532" alt="s1 ss" src="https://github.com/user-attachments/assets/c1a7feae-0dab-489a-931a-c637c1e2ac4e" />
 
-Program ini menukar nilai tiga variabel menggunakan pointer dan reference. Nilai awal x, y, dan z ditukar melalui fungsi tukarPointer dengan mengirim alamat variabel, lalu ditukar lagi dengan tukarReference menggunakan referensi langsung. Hasil sebelum dan sesudah pertukaran ditampilkan untuk menunjukkan perubahan nilai pada ketiga variabel.
+Program ini pakai struct buat menyimpan data mahasiswa. Nilai akhir dihitung dari UTS, UAS, dan tugas lewat fungsi hitungNilaiAkhir, lalu hasilnya ditampilin dalam bentuk tabel.
 
 #### Full code Screenshot:
-<img width="1919" height="1136" alt="fss2" src="https://github.com/user-attachments/assets/9850fd52-6a2a-45fd-a689-24e60b30bda9" />
+<img width="1919" height="1141" alt="s1 fss" src="https://github.com/user-attachments/assets/27a28b6c-b253-4bc9-b74a-25f8c06c84b5" />
 
+
+### 2. [ADT Pelajaran]
+
+### a. [Header File]
+```C++
+#ifndef PELAJARAN_H_INCLUDED
+#define PELAJARAN_H_INCLUDED
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
+
+pelajaran create_pelajaran(string namapel, string kodepel);
+void tampil_pelajaran(pelajaran pel);
+
+#endif
+```
+Berisi struct pelajaran untuk menyimpan nama dan kode mata pelajaran, serta deklarasi fungsi terkait.
+
+### b. [Source File]
+
+```C++
+#include "pelajaran.h"
+#include <iostream>
+using namespace std;
+
+pelajaran create_pelajaran(string namapel, string kodepel) {
+    pelajaran p;
+    p.namaMapel = namapel;
+    p.kodeMapel = kodepel;
+    return p;
+}
+
+void tampil_pelajaran(pelajaran pel) {
+    cout << "=== Data Pelajaran ===" << endl;
+    cout << "Nama Mata Pelajaran : " << pel.namaMapel << endl;
+    cout << "Kode Mata Pelajaran : " << pel.kodeMapel << endl;
+}
+```
+Berisi fungsi create_pelajaran() untuk membuat data pelajaran dan tampil_pelajaran() untuk menampilkannya.
+
+### c. [Main Program]
+
+```C++
+#include <iostream>
+#include "pelajaran.h"
+using namespace std;
+
+int main() {
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+    pelajaran pel = create_pelajaran(namapel, kodepel);
+    tampil_pelajaran(pel);
+    return 0;
+}
+```
+Membuat objek pelajaran baru lalu menampilkan datanya ke layar.
+
+#### Output:
+<img width="873" height="146" alt="s2 ss" src="https://github.com/user-attachments/assets/610f6af3-7092-45ad-b676-65224e6a804b" />
+
+Program ini pakai struct sebagai ADT buat nyimpen nama dan kode pelajaran. Data dibuat lewat fungsi create_pelajaran, lalu ditampilin ke layar pakai tampil_pelajaran biar pengguna bisa lihat hasilnya.
+
+#### Full code Screenshot:
+<img width="1917" height="1139" alt="s2 fss" src="https://github.com/user-attachments/assets/87104152-690f-48b1-bd40-dfb0b754a33a" />
 
 
 ### 3. [Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari arrayA {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}]
@@ -188,16 +223,63 @@ Program ini menukar nilai tiga variabel menggunakan pointer dan reference. Nilai
 #include <iostream>
 using namespace std;
 
-void tampilArray(int arr[], int n){
+void tampil(int a[3][3]){
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            cout<<a[i][j]<<" ";
+        }
+        cout<<endl;
+    }
+}
 
+void tukarArr(int x[3][3], int y[3][3], int r, int c){
+    int tmp = x[r][c];
+    x[r][c] = y[r][c];
+    y[r][c] = tmp;
+}
+
+void tukarPtr(int *a, int *b){
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+int main(){
+    int A[3][3] = {{3,16,9},{1,12,1},{2,51,8}};
+    int B[3][3] = {{21,3,5},{7,9,23},{4,65,8}};
+    int *p1, *p2;
+    int n1=10, n2=20;
+
+    p1=&n1;
+    p2=&n2;
+
+    cout<<"Array A:"<<endl;
+    tampil(A);
+    cout<<"Array B:"<<endl;
+    tampil(B);
+
+    cout<<"\nTukar posisi (1,1)"<<endl;
+    tukarArr(A,B,1,1);
+
+    cout<<"Array A sekarang:"<<endl;
+    tampil(A);
+    cout<<"Array B sekarang:"<<endl;
+    tampil(B);
+
+    cout<<"\nNilai sebelum tukar pointer: "<<n1<<" dan "<<n2<<endl;
+    tukarPtr(p1,p2);
+    cout<<"Nilai sesudah tukar pointer: "<<n1<<" dan "<<n2<<endl;
+
+    return 0;
+}
 ```
 #### Output:
-<img width="1259" height="422" alt="Screenshot 2025-10-09 083042" src="https://github.com/user-attachments/assets/7e7c632d-1276-49e7-a13e-2954fcf5bedb" />
+<img width="1259" height="531" alt="s3 ss" src="https://github.com/user-attachments/assets/95ef3d82-f84d-43b5-be3b-476294fed2bc" />
 
-Program ini menampilkan menu untuk mengolah data array. Pengguna dapat melihat isi array, mencari nilai maksimum, minimum, dan menghitung rata-rata dengan memilih opsi yang tersedia. Setiap fitur dibuat dalam fungsi terpisah, dan program akan terus berjalan sampai pengguna memilih keluar.
+Program ini menampilkan dua array 3x3, menukar elemen tertentu antar array, dan menukar nilai dua variabel menggunakan pointer. Hasil perubahan ditampilkan agar terlihat efek tukarnya.
 
 #### Full code Screenshot:
-<img width="1915" height="1135" alt="Screenshot 2025-10-09 083100" src="https://github.com/user-attachments/assets/816b7a8c-3d8a-44b8-8ef4-09351009cb59" />
+<img width="1919" height="1137" alt="s3 fss" src="https://github.com/user-attachments/assets/7d40f181-906d-4685-b349-2b5b6f6025cc" />
 
 
 ## Kesimpulan
@@ -205,6 +287,7 @@ Secara umum dari Modul 3 tentang Abstract Data Type (ADT), intinya kita belajar 
 
 ## Referensi
 [1] Exploring the Code Foundation: A Literature Review of Data Structures in C++ Oleh RAgung Yuliyanto Nugroho, Nur Hamid Sutanto. Diakses pada 15 Oktober 2025 melalui https://international.aritekin.or.id/index.php/IJMICSE/article/view/47/73
+
 
 
 
