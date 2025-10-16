@@ -26,9 +26,9 @@ Implementasi ADT biasanya dibagi menjadi:
 
 ## Guided 
 
-### 1. [???]
+### 1. ADT Struct]
 
-### A. [Header File]
+### a. [Header File]
 ```C++
 #ifndef MAHASISWA_H_INCLUDED
 #define MAHASISWA_H_INCLUDED
@@ -42,9 +42,9 @@ void inputMhs(mahasiswa &m);
 float rata2 (mahasiswa m);
 #endif // MAHASISWA_H_INCLUDED
 ```
-P
+Bagian ini berisi deklarasi struct mahasiswa yang menyimpan data NIM serta dua nilai. Selain itu, terdapat deklarasi fungsi inputMhs() untuk memasukkan data mahasiswa dan rata2() untuk menghitung nilai rata-rata.
 
-### B. [Source File]
+### b. [Source File]
 
 ```C++
 #include <iostream>
@@ -65,9 +65,10 @@ float rata2(mahasiswa m){
  return float(m.nilai1+m.nilai2)/2;
 }
 ```
-P
+Bagian ini berisi definisi fungsi dari file header. <br>
+Fungsi inputMhs() digunakan untuk menerima input data mahasiswa dari pengguna, sedangkan fungsi rata2() digunakan untuk menghitung dan mengembalikan nilai rata-rata dari dua nilai yang dimasukkan.
 
-### C. [Main Program]
+### c. [Main Program]
 
 ```C++
 #include <iostream>
@@ -81,7 +82,7 @@ int main(){
     return 0;
 }
 ```
-Program ini menunjukkan penggunaan reference dan pointer. Variabel ref menjadi alias dari a, sehingga perubahan pada ref juga mengubah nilai a. Setelah itu, fungsi tukar digunakan untuk menukar nilai a dan b dengan memanfaatkan pointer.
+Bagian utama program yang menjalankan proses utama. Program akan memanggil inputMhs() untuk mengisi data mahasiswa, kemudian memanggil rata2() untuk menghitung rata-rata dan menampilkan hasilnya ke layar.
 
 ## Unguided 
 
@@ -204,6 +205,7 @@ Secara umum dari Modul 3 tentang Abstract Data Type (ADT), intinya kita belajar 
 
 ## Referensi
 [1] Exploring the Code Foundation: A Literature Review of Data Structures in C++ Oleh RAgung Yuliyanto Nugroho, Nur Hamid Sutanto. Diakses pada 15 Oktober 2025 melalui https://international.aritekin.or.id/index.php/IJMICSE/article/view/47/73
+
 
 
 
