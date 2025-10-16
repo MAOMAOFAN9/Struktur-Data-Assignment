@@ -217,7 +217,7 @@ Program ini pakai struct sebagai ADT buat nyimpen nama dan kode pelajaran. Data 
 <img width="1917" height="1139" alt="s2 fss" src="https://github.com/user-attachments/assets/87104152-690f-48b1-bd40-dfb0b754a33a" />
 
 
-### 3. [Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari arrayA {11, 8, 5, 7, 12, 26, 3, 54, 33, 55}]
+### 3. [Tukar Array dan Pointer]
 
 ```C++
 #include <iostream>
@@ -287,6 +287,7 @@ Secara umum dari Modul 3 tentang Abstract Data Type (ADT), intinya kita belajar 
 
 ## Referensi
 [1] Exploring the Code Foundation: A Literature Review of Data Structures in C++ Oleh RAgung Yuliyanto Nugroho, Nur Hamid Sutanto. Diakses pada 15 Oktober 2025 melalui https://international.aritekin.or.id/index.php/IJMICSE/article/view/47/73
+
 
 
 
