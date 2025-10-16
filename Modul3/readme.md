@@ -26,37 +26,60 @@ Implementasi ADT biasanya dibagi menjadi:
 
 ## Guided 
 
-### 1. [Array]
+### 1. [???]
 
+### A. [Header File]
 ```C++
-#include <iostream>
+#ifndef MAHASISWA_H_INCLUDED
+#define MAHASISWA_H_INCLUDED
 
-using namespace std;
+struct mahasiswa{
+    char nim[10];
+    int nilai1, nilai2;
+};
 
-int main () {
-
+void inputMhs(mahasiswa &m);
+float rata2 (mahasiswa m);
+#endif // MAHASISWA_H_INCLUDED
 ```
-Program ini digunakan untuk menampilkan isi array satu, dua, dan tiga dimensi. Pertama, array arrID berisi lima elemen ditampilkan dengan perulangan. Lalu, array dua dimensi arr2D berukuran dua baris dan tiga kolom ditampilkan menggunakan dua loop bersarang. Terakhir, array tiga dimensi arr3D berisi angka 1–12 ditampilkan dengan tiga loop bersarang. Secara keseluruhan, program ini hanya menunjukkan cara mendeklarasikan dan menampilkan array dengan berbagai dimensi menggunakan perulangan.
+P
 
-### 2. [Prosedur dan Fungsi]
+### B. [Source File]
 
 ```C++
 #include <iostream>
+#include "mahasiswa.h"
+
 using namespace std;
 
-    void tulis (int x) {
+void inputMhs(mahasiswa &m){
+cout << "input nama : ";
+cin >> (m).nim;
+cout << "input nilai : ";
+cin >> (m).nilai1;
+cout << "input nilai2 : ";
+cin >> (m).nilai2;
 
+}
+float rata2(mahasiswa m){
+ return float(m.nilai1+m.nilai2)/2;
+}
 ```
-Program ini meminta pengguna memasukkan jumlah baris, lalu menampilkan teks “Baris ke-” sesuai angka yang dimasukkan. Nilai input disimpan dalam variabel jum dan dikirim ke fungsi tulis, yang menggunakan perulangan for untuk menampilkan baris dari 1 sampai satu kurang dari jumlah yang dimasukkan.
+P
 
-### 3. [Pointer]
+### C. [Main Program]
 
 ```C++
 #include <iostream>
+#include "mahasiswa.h"
 using namespace std;
 
-void tukar(int *x, int *y) {
-
+int main(){
+    mahasiswa mhs;
+    inputMhs(mhs);
+    cout << "Rata-rata = " << rata2(mhs);
+    return 0;
+}
 ```
 Program ini menunjukkan penggunaan reference dan pointer. Variabel ref menjadi alias dari a, sehingga perubahan pada ref juga mengubah nilai a. Setelah itu, fungsi tukar digunakan untuk menukar nilai a dan b dengan memanfaatkan pointer.
 
@@ -181,6 +204,7 @@ Secara umum dari Modul 3 tentang Abstract Data Type (ADT), intinya kita belajar 
 
 ## Referensi
 [1] Exploring the Code Foundation: A Literature Review of Data Structures in C++ Oleh RAgung Yuliyanto Nugroho, Nur Hamid Sutanto. Diakses pada 15 Oktober 2025 melalui https://international.aritekin.or.id/index.php/IJMICSE/article/view/47/73
+
 
 
 
