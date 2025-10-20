@@ -10,7 +10,7 @@ Linked list juga merupakan struktur data list yang diimplementasikan sebagai nod
 
 Dalam linked list, jumlah elemen tidak perlu ditentukan sebelumnya, dan memorinya dapat dialokasikan atau dilepaskan selama pemrosesan sesuai kebutuhan, sehingga proses penyisipan dan penghapusan menjadi lebih mudah dan sederhana[2]. <br>
 
-Beberapa operasi dasar yang digunakan dalam guided 1 & 2 :
+Beberapa operasi dasar yang digunakan :
 - createList() untuk membuat list kosong.
 - alokasi() untuk membuat node baru.
 - insertFirst(), insertAfter(), dan insertLast() untuk menambah node di posisi berbeda.
