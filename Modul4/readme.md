@@ -208,7 +208,7 @@ Bagian ini menjalankan proses utama program, yaitu membuat list, menambahkan dat
 Deskripsi Program: <br>
 Program ini intinya buat menyimpen data mahasiswa pakai konsep linked list. Tiap data disimpan dalam node yang bisa disambung-sambung. Fungsinya cuma buat nambah, hapus, sama nampilin isi list biar keliatan datanya nyambung satu sama lain.
 
-### 1. [Guided 2]
+### 2. [Guided 2]
 
 ### a. [Header File]
 ```C++
