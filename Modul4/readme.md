@@ -208,7 +208,7 @@ Bagian ini menjalankan proses utama program, yaitu membuat list, menambahkan dat
 Deskripsi Program: <br>
 Program ini intinya buat menyimpen data mahasiswa pakai konsep linked list. Tiap data disimpan dalam node yang bisa disambung-sambung. Fungsinya cuma buat nambah, hapus, sama nampilin isi list biar keliatan datanya nyambung satu sama lain.
 
-### 1. [Guided 1]
+### 1. [Guided 2]
 
 ### a. [Header File]
 ```C++
@@ -236,7 +236,7 @@ struct node { //node untuk isi dari linked listnya, isi setiap node adaalah data
     address next;
 };
 
-struct linkedList { //Ini linked listnya
+struct linkedList { 
     address first;
 };
 
@@ -247,8 +247,14 @@ address alokasi(string nama, string nim, int umur);
 void dealokasi(address &node);
 void printList(linkedList List);
 void insertFirst(linkedList &List, address nodeBaru);
-void insertAfter(linkedList &List, address nodeBaru, address Prev); //
+void insertAfter(linkedList &List, address nodeBaru, address Prev);
 void insertLast(linkedList &List, address nodeBaru);
+
+void delFirst(linkedList &List);
+void delLast(linkedList &List);
+void delAfter(linkedList &List, address nodeHapus, address nodePrev);
+int nbList(linkedList List);
+void deleteList(linkedList &List);
 
 #endif
 ```
@@ -267,7 +273,7 @@ using namespace std;
 //fungsi untuk cek apakah list kosong atau tidak
 bool isEmpty(linkedList List) {
     if (List.first == Nil) {
-        return true;
+        return true; 
     } else {
         return false;
     }
@@ -281,12 +287,12 @@ void createList(linkedList &List) {
 }
 
 //pembuatan node baru dengan menerapkan manajemen memori
-address alokasi(string nama, string nim, int umur) {
+address alokasi(string nama, string nim, int umur) { 
     /* I.S. sembarang
        F.S. mengembalikan alamat node baru dengan isidata = sesuai parameter dan next = Nil */
-    address nodeBaru = new node;
+    address nodeBaru = new node; 
     nodeBaru->isidata.nama = nama;
-    nodeBaru->isidata.nim = nim;
+    nodeBaru->isidata.nim = nim; 
     nodeBaru->isidata.umur = umur;
     nodeBaru->next = Nil;
     return nodeBaru;
@@ -304,7 +310,7 @@ void dealokasi(address &node) {
 void insertFirst(linkedList &List, address nodeBaru) {
     /* I.S. sembarang, P sudah dialokasikan
        F.S. menempatkan elemen list (node) pada awal list */
-    nodeBaru->next = List.first;
+    nodeBaru->next = List.first; 
     List.first = nodeBaru;
 }
 
@@ -333,6 +339,60 @@ void insertLast(linkedList &List, address nodeBaru) {
     }
 }
 
+//prosedur-prosedur untuk delete / menghapus node yang ada didalam list
+void delFirst(linkedList &List){
+    /* I.S. list tidak kosong
+       F.S. node pertama di list terhapus*/
+    address nodeHapus;
+    if (!isEmpty(List)) {
+        nodeHapus = List.first;
+        List.first = List.first->next;
+        nodeHapus->next = Nil;
+        dealokasi(nodeHapus);
+    } else {
+        cout << "List kosong!" << endl;
+    }
+}
+
+void delLast(linkedList &List){
+    /* I.S. list tidak kosong
+       F.S. node terakhir di list terhapus */
+    address nodeHapus, nodePrev;
+    if (!isEmpty(List)) {
+        nodeHapus = List.first;
+        if (nodeHapus->next == Nil) {
+            List.first = Nil;
+            dealokasi(nodeHapus);
+        } else { 
+            while (nodeHapus->next != Nil) {
+                nodePrev = nodeHapus; 
+                nodeHapus = nodeHapus->next;
+            }
+            nodePrev->next = Nil; 
+            dealokasi(nodeHapus);
+        }
+    } else {
+        cout << "List kosong!" << endl;
+    }
+}
+
+void delAfter(linkedList &List, address nodeHapus, address nodePrev){
+    /* I.S. list tidak kosong, Prev alamat salah satu elemen list
+       F.S. nodeBantu adalah alamat dari Prev→next, menghapus Prev→next dari list */
+    if (isEmpty(List)) {
+        cout << "List kosong!" << endl;
+    } else { //jika list tidak kosong
+        if (nodePrev != Nil && nodePrev->next != Nil) { 
+            nodeHapus = nodePrev->next;       
+            nodePrev->next = nodeHapus->next;  
+            nodeHapus->next = Nil;         
+            dealokasi(nodeHapus);
+        } else {
+            cout << "Node sebelumnya (prev) tidak valid!" << endl;
+        }
+    }
+}
+
 //prosedur untuk menampilkan isi list
 void printList(linkedList List) {
     /* I.S. list mungkin kosong
@@ -341,13 +401,41 @@ void printList(linkedList List) {
         cout << "List kosong." << endl;
     } else {
         address nodeBantu = List.first;
-        while (nodeBantu != Nil) {
-            cout << "Nama : " << nodeBantu->isidata.nama
-                 << ", NIM : " << nodeBantu->isidata.nim
+        while (nodeBantu != Nil) { 
+            cout << "Nama : " << nodeBantu->isidata.nama 
+                 << ", NIM : " << nodeBantu->isidata.nim 
                  << ", Usia : " << nodeBantu->isidata.umur << endl;
             nodeBantu = nodeBantu->next;
         }
     }
+}
+
+//function untuk menampilkan jumlah node didalam list
+int nbList(linkedList List) {
+    /* I.S. list sudah ada
+       F.S. menampilkan jumlah node didalam list*/
+    int count = 0;
+    address nodeBantu = List.first;
+    while (nodeBantu != Nil) {
+        count++;
+        nodeBantu = nodeBantu->next; 
+    }
+    return count;
+}
+
+//prosedur untuk menghapus list (menghapus semua node didalam list)
+void deleteList(linkedList &List){
+    /* I.S. list sudah ada
+       F.S. menghapus semua node didalam list*/
+    address nodeBantu, nodeHapus;
+    nodeBantu = List.first;
+    while (nodeBantu != Nil) {
+        nodeHapus = nodeBantu;
+        nodeBantu = nodeBantu->next;
+        dealokasi(nodeHapus); 
+    }
+    List.first = Nil; 
+    cout << "List sudah terhapus!" << endl;
 }
 ```
 Bagian ini berisi implementasi fungsi-fungsi dari header, seperti membuat list, menambah node, menghapus node, dan menampilkan isi list.
@@ -380,10 +468,26 @@ int main() {
 
     cout << "--- ISI LIST SETELAH DILAKUKAN INSERT ---" << endl;
     printList(List);
+    cout << "Jumlah node : " << nbList(List) << endl;
+    cout << endl;
+
+    delFirst(List);
+    delLast(List);
+    delAfter(List, nodeD, nodeC);
+
+    cout << "--- ISI LIST SETELAH DILAKUKAN DELETE ---" << endl;
+    printList(List);
+    cout << "Jumlah node : " << nbList(List) << endl;
+    cout << endl;
+
+    deleteList(List);
+    cout << "--- ISI LIST SETELAH DILAKUKAN HAPUS LIST ---" << endl;
+    printList(List);
+    cout << "Jumlah node : " << nbList(List) << endl;
+    cout << endl;
 
     return 0;
 }
-
 ```
 Bagian ini menjalankan proses utama program, yaitu membuat list, menambahkan data mahasiswa, dan menampilkan hasilnya ke layar.
 
