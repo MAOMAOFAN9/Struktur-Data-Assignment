@@ -812,7 +812,7 @@ Program ini merupakan pengembangan dari ADT Single Linked sebelumnya, tapi ada t
 
 
 ## Kesimpulan
-Secara umum dari Modul 3 tentang Abstract Data Type (ADT), intinya kita belajar cara membuat tipe data sendiri beserta operasinya. Tujuannya supaya program lebih teratur dan mudah diatur. Dalam C++, ADT biasanya dipisah jadi file .h, .cpp, dan main. Secara keseluruhan, konsep ini membantu bikin kode lebih rapi dan efisien, meskipun menurut saya sendiri lebih ribet.
+Secara keseluruhan, modul dan praktikum Singly Linked List membahas cara mengelola data secara dinamis menggunakan node yang saling terhubung. Materi mencakup proses penambahan, penghapusan, hingga perhitungan data dalam list.
 
 ## Referensi
 [1] Analysis of Arraylist dan Linked List oleh: K. Renuka Devi. Diakses pada 20 Oktober 2025 melalui: <br>
