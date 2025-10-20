@@ -96,7 +96,7 @@ void delLast(linkedList &List){
     if (!isEmpty(List)) {
         nodeHapus = List.first;
         if (nodeHapus->next == Nil) {
-            List.first = Nil; // ✅ diperbaiki (tadi salah)
+            List.first = Nil;
             dealokasi(nodeHapus);
         } else { 
             while (nodeHapus->next != Nil) {
