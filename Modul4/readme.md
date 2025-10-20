@@ -6,7 +6,7 @@
 Singly Linked List <br>
 Singly Linked List adalah struktur data dinamis yang tersusun dari sekumpulan node yang saling terhubung lewat pointer. Setiap node berisi data dan alamat node berikutnya. Tidak seperti array, elemen-elemen pada linked list tidak tersimpan berurutan di memori, tapi dihubungkan menggunakan pointer next. <br>
 
-Linked list juga merupakan struktur data list … yang diimplementasikan sebagai node dengan dua entitas: data dan pointer.[1]. <br>
+Linked list juga merupakan struktur data list yang diimplementasikan sebagai node dengan dua entitas: data dan pointer.[1]. <br>
 
 Dalam linked list, jumlah elemen tidak perlu ditentukan sebelumnya, dan memorinya dapat dialokasikan atau dilepaskan selama pemrosesan sesuai kebutuhan, sehingga proses penyisipan dan penghapusan menjadi lebih mudah dan sederhana[2]. <br>
 
