@@ -3,26 +3,21 @@
 
 ## Dasar Teori
 
-Abstract Data Type (ADT)
-ADT atau Abstract Data Type adalah tipe data yang disertai dengan sekumpulan operasi dasar (primitif) yang dapat dilakukan terhadap tipe tersebut. ADT bersifat abstrak karena hanya mendefinisikan apa yang bisa dilakukan, bukan bagaimana caranya dilakukan. Dalam ADT terdapat definisi tipe, invariant (aturan tetap), dan aksioma yang berlaku. Konsep ini membantu pemrogram dalam membangun program yang lebih terstruktur dan mudah dikembangkan karena memisahkan antara spesifikasi dan implementasi. <br>
+Singly Linked List <br>
+Singly Linked List adalah struktur data dinamis yang tersusun dari sekumpulan node yang saling terhubung lewat pointer. Setiap node berisi data dan alamat node berikutnya. Tidak seperti array, elemen-elemen pada linked list tidak tersimpan berurutan di memori, tapi dihubungkan menggunakan pointer next. <br>
 
-Struktur data sendiri merupakan komponen fundamental dalam pengembangan perangkat lunak yang efisien. Dalam konteks C++, ADT berperan sebagai model konseptual yang mendefinisikan tipe data beserta operasi-operasi yang dapat dilakukan tanpa mengungkapkan detail implementasinya. Berbagai jenis struktur data seperti array, linked list, stack, queue, hash table, dan tree digunakan untuk membangun dasar kode yang kuat dan efisien[1]. <br>
+Linked list juga merupakan struktur data list … yang diimplementasikan sebagai node dengan dua entitas: data dan pointer.[1]. <br>
 
-Komponen utama dalam ADT meliputi:
-1. Konstruktor/Kreator, pemebentuk nilai type.Semua objek (variabel) bertype tersebut harus melalui konstruktor. Biasanya namanya diawali Make. <br>
-2. Selector, untuk mengakses tipe komponen(biasanya namanya diawali Get). <br>
-3. Prosedur pengubah nilai komponen (biasanya namanya diawali Get).
-4. Tipe validator komponen, yang dipakai untuk mentest apakah dapat membentuk tipe sesuai dengan batasan.
-5. Destruktor/Dealokator yaitu untuk “menghancurkan” nilai objek/variabel (sekaligus memori penyimpanannya).
-6. Baca/Tulis, untuk interface dengan input/output device.
-7. Operator relasional, terhadap tipe tersebut untuk mendefinisikan lebih besar, lebih kecil, sama dengan dan sebagainya.
-8. Aritmatika terhadap tipe tersebut, karena biasanya aritmatika dalam bahasa C hanya terdefinisi untuk bilangan numerik.
-9. Konversi dari tipe tersebut ke tipe dasar dan sebaliknya.
+Dalam linked list, jumlah elemen tidak perlu ditentukan sebelumnya, dan memorinya dapat dialokasikan atau dilepaskan selama pemrosesan sesuai kebutuhan, sehingga proses penyisipan dan penghapusan menjadi lebih mudah dan sederhana[2]. <br>
 
-Implementasi ADT biasanya dibagi menjadi:
-- Header file (.h): berisi definisi tipe data dan deklarasi fungsi/prosedur.
-- Source file (.cpp): berisi realisasi (kode) dari fungsi dan prosedur yang dideklarasikan di header.
-- Main program (driver): menguji fungsi dan prosedur dari ADT tersebut.
+Beberapa operasi dasar yang digunakan dalam guided 1 & 2 :
+- createList() untuk membuat list kosong.
+- alokasi() untuk membuat node baru.
+- insertFirst(), insertAfter(), dan insertLast() untuk menambah node di posisi berbeda.
+- delFirst(), delAfter(), dan delLast() untuk menghapus node dari list.
+- printList() untuk menampilkan isi list.
+- nbList() untuk menghitung jumlah node.
+- deleteList() untuk menghapus seluruh isi list.
 
 ## Guided 
 
@@ -258,7 +253,8 @@ void deleteList(linkedList &List);
 
 #endif
 ```
-Bagian ini berisi deklarasi struct mahasiswa, node, dan linked list, serta daftar fungsi yang digunakan untuk mengelola data pada list.
+Pada Guided 1, header hanya berisi deklarasi untuk membuat dan menambah data ke dalam linked list. <br>
+Sedangkan di Guided 2, isinya lebih lengkap karena selain fungsi penambahan, juga ada deklarasi untuk menghapus node, menghitung jumlah node, dan menghapus seluruh list.
 
 ### b. [Source File]
 
@@ -438,7 +434,8 @@ void deleteList(linkedList &List){
     cout << "List sudah terhapus!" << endl;
 }
 ```
-Bagian ini berisi implementasi fungsi-fungsi dari header, seperti membuat list, menambah node, menghapus node, dan menampilkan isi list.
+Di Guided 1, fungsi yang diimplementasikan hanya sebatas membuat list dan menambah node di berbagai posisi. <br>
+Sementara Guided 2 sudah menambahkan fungsi untuk menghapus node (awal, tengah, akhir), menghitung jumlah node, dan menghapus semua data dari list.
 
 ### c. [Main Program]
 
@@ -489,10 +486,11 @@ int main() {
     return 0;
 }
 ```
-Bagian ini menjalankan proses utama program, yaitu membuat list, menambahkan data mahasiswa, dan menampilkan hasilnya ke layar.
+Pada Guided 1, program utama hanya menjalankan proses penambahan data mahasiswa dan menampilkannya. <br>
+Sedangkan di Guided 2, program melakukan penambahan, penghapusan, perhitungan jumlah node, dan penghapusan seluruh list, jadi prosesnya lebih lengkap dan dinamis.
 
 Deskripsi Program: <br>
-Program ini intinya buat menyimpen data mahasiswa pakai konsep linked list. Tiap data disimpan dalam node yang bisa disambung-sambung. Fungsinya cuma buat nambah, hapus, sama nampilin isi list biar keliatan datanya nyambung satu sama lain.
+Guided 1 dan Guided 2 sama-sama membahas penggunaan linked list untuk menyimpan data mahasiswa, tapi tingkat kompleksitasnya berbeda. Pada Guided 1, program hanya fokus pada pembuatan dan penambahan data ke dalam list. Sedangkan pada Guided 2, program dikembangkan lebih lanjut dengan menambahkan fitur penghapusan, perhitungan jumlah data, dan penghapusan seluruh list. Jadi, Guided 2 bisa dibilang versi lebih lengkap dan fungsional dari Guided 1.
 
 ## Unguided 
 
@@ -693,7 +691,10 @@ Program ini menampilkan dua array 3x3, menukar elemen tertentu antar array, dan 
 Secara umum dari Modul 3 tentang Abstract Data Type (ADT), intinya kita belajar cara membuat tipe data sendiri beserta operasinya. Tujuannya supaya program lebih teratur dan mudah diatur. Dalam C++, ADT biasanya dipisah jadi file .h, .cpp, dan main. Secara keseluruhan, konsep ini membantu bikin kode lebih rapi dan efisien, meskipun menurut saya sendiri lebih ribet.
 
 ## Referensi
-[1] Exploring the Code Foundation: A Literature Review of Data Structures in C++ Oleh RAgung Yuliyanto Nugroho, Nur Hamid Sutanto. Diakses pada 15 Oktober 2025 melalui https://international.aritekin.or.id/index.php/IJMICSE/article/view/47/73
+[1] Analysis of Arraylist dan Linked List oleh: K. Renuka Devi. Diakses pada 20 Oktober 2025 melalui: <br>
+https://www.scribd.com/document/756597574/263-IJCSE-07046-23?utm <br>
+[2] Review Paper On Dynamic Implementation Using Linked List oleh: Manish saini, Ankush Sharma. Diakses pada 20 Oktober 2025 melalui: <br>
+https://www.researchgate.net/publication/329609389_Review_Paper_On_Dynamic_Implementation_Using_Linked_List_Chandigarh_universty
 
 
 
