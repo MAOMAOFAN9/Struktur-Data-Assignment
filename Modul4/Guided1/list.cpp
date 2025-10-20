@@ -6,7 +6,7 @@ using namespace std;
 //F.S = Final State / kondisi akhir
 
 //fungsi untuk cek apakah list kosong atau tidak
-bool isEmpty(linkedList List) { //ganti linkedlist -> linkedList
+bool isEmpty(linkedList List) {
     if (List.first == Nil) {
         return true;
     } else {
