@@ -23,7 +23,7 @@ int main() {
 
     cout << "--- ISI LIST SETELAH DILAKUKAN INSERT ---" << endl;
     printList(List);
-    cout << "Jumlah node : " << nbList(List) << endl; //perbaiki tanda titik dua
+    cout << "Jumlah node : " << nbList(List) << endl;
     cout << endl;
 
     delFirst(List);

@@ -10,7 +10,7 @@ using namespace std;
 struct mahasiswa {
     string nama;
     string nim;
-    int umur; //tambahkan titik koma
+    int umur;
 };
 
 typedef mahasiswa dataMahasiswa; //Memberikan nama alias dataMahasiswa untuk struct mahasiswa
@@ -22,7 +22,7 @@ struct node { //node untuk isi dari linked listnya, isi setiap node adaalah data
     address next;
 };
 
-struct linkedList { //Ini linked listnya
+struct linkedList { 
     address first;
 };
 

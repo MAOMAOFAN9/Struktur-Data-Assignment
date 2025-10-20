@@ -10,7 +10,7 @@ using namespace std;
 struct mahasiswa {
     string nama;
     string nim;
-    int umur; //tambahkan titik koma
+    int umur;
 };
 
 typedef mahasiswa dataMahasiswa; //Memberikan nama alias dataMahasiswa untuk struct mahasiswa
