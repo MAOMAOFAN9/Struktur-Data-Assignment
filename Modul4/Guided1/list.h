@@ -33,7 +33,7 @@ address alokasi(string nama, string nim, int umur);
 void dealokasi(address &node);
 void printList(linkedList List);
 void insertFirst(linkedList &List, address nodeBaru);
-void insertAfter(linkedList &List, address nodeBaru, address Prev); // ✅ parameter diperbaiki
+void insertAfter(linkedList &List, address nodeBaru, address Prev); 
 void insertLast(linkedList &List, address nodeBaru);
 
 #endif
