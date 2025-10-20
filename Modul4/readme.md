@@ -494,197 +494,321 @@ Guided 1 dan Guided 2 sama-sama membahas penggunaan linked list untuk menyimpan 
 
 ## Unguided 
 
-### 1. [Data Mahasiswa]
-
-```C++
-#include <iostream>
-using namespace std;
-
-struct mhs{
-    string nama,nim;
-    float uts,uas,tugas,nilaiAkhir;
-};
-
-float hitung(float u,float a,float t){
-    return (0.3*u)+(0.4*a)+(0.3*t);
-}
-
-int main(){
-    mhs M[10];
-    int n;
-    cout<<"Masukkan jumlah mahasiswa (max 10): ";
-    cin>>n;
-    if(n>10){
-        cout<<"Kebanyakan, max 10 aja\n";
-        return 0;
-    }
-    for(int i=0;i<n;i++){
-        cout<<"\nMahasiswa ke-"<<i+1<<endl;
-        cout<<"Nama : ";
-        cin.ignore();
-        getline(cin,M[i].nama);
-        cout<<"NIM  : ";
-        cin>>M[i].nim;
-        cout<<"UTS  : ";
-        cin>>M[i].uts;
-        cout<<"UAS  : ";
-        cin>>M[i].uas;
-        cout<<"Tugas: ";
-        cin>>M[i].tugas;
-        M[i].nilaiAkhir=hitung(M[i].uts,M[i].uas,M[i].tugas);
-    }
-    cout<<"\nDaftar Nilai Mahasiswa\n";
-    cout<<"-----------------------------\n";
-    cout<<"No\tNIM\t\tNama\t\tNilAkhir\n";
-    for(int i=0;i<n;i++){
-        cout<<i+1<<"\t"<<M[i].nim<<"\t\t"<<M[i].nama<<"\t\t"<<M[i].nilaiAkhir<<endl;
-    }
-    return 0;
-}
-```
-#### Output:
-<img width="1262" height="532" alt="s1 ss" src="https://github.com/user-attachments/assets/c1a7feae-0dab-489a-931a-c637c1e2ac4e" />
-
-Program ini pakai struct buat menyimpan data mahasiswa. Nilai akhir dihitung dari UTS, UAS, dan tugas lewat fungsi hitungNilaiAkhir, lalu hasilnya ditampilin dalam bentuk tabel.
-
-#### Full code Screenshot:
-<img width="1919" height="1141" alt="s1 fss" src="https://github.com/user-attachments/assets/27a28b6c-b253-4bc9-b74a-25f8c06c84b5" />
-
-
-### 2. [ADT Pelajaran]
+### 1. [ADT Singly Linked]
 
 ### a. [Header File]
 ```C++
-#ifndef PELAJARAN_H_INCLUDED
-#define PELAJARAN_H_INCLUDED
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
 
 #include <iostream>
-#include <string>
 using namespace std;
 
-struct pelajaran {
-    string namaMapel;
-    string kodeMapel;
+struct node{
+    int data;
+    node *next;
 };
 
-pelajaran create_pelajaran(string namapel, string kodepel);
-void tampil_pelajaran(pelajaran pel);
+struct list{
+    node *first;
+};
+
+void buatList(list &L);
+node* buatNode(int x);
+void insertAwal(list &L,node *n);
+void insertAkhir(list &L,node *n);
+void insertAfter(node *prev,node *n);
+void tampil(list L);
 
 #endif
 ```
-Berisi struct pelajaran untuk menyimpan nama dan kode mata pelajaran, serta deklarasi fungsi terkait.
+
 
 ### b. [Source File]
 
 ```C++
-#include "pelajaran.h"
+#include "singlylist.h"
 #include <iostream>
 using namespace std;
 
-pelajaran create_pelajaran(string namapel, string kodepel) {
-    pelajaran p;
-    p.namaMapel = namapel;
-    p.kodeMapel = kodepel;
-    return p;
+void buatList(list &L){
+    L.first=NULL;
 }
 
-void tampil_pelajaran(pelajaran pel) {
-    cout << "=== Data Pelajaran ===" << endl;
-    cout << "Nama Mata Pelajaran : " << pel.namaMapel << endl;
-    cout << "Kode Mata Pelajaran : " << pel.kodeMapel << endl;
+node* buatNode(int x){
+    node *n = new node;
+    n->data=x;
+    n->next=NULL;
+    return n;
+}
+
+void insertAwal(list &L,node *n){
+    if(L.first==NULL){
+        L.first=n;
+    }else{
+        n->next=L.first;
+        L.first=n;
+    }
+}
+
+void insertAkhir(list &L,node *n){
+    if(L.first==NULL){
+        L.first=n;
+    }else{
+        node *p=L.first;
+        while(p->next!=NULL){
+            p=p->next;
+        }
+        p->next=n;
+    }
+}
+
+void insertAfter(node *prev,node *n){
+    if(prev!=NULL){
+        n->next=prev->next;
+        prev->next=n;
+    }
+}
+
+void tampil(list L){
+    node *p=L.first;
+    while(p!=NULL){
+        cout<<p->data<<" ";
+        p=p->next;
+    }
+    cout<<endl;
 }
 ```
-Berisi fungsi create_pelajaran() untuk membuat data pelajaran dan tampil_pelajaran() untuk menampilkannya.
+
 
 ### c. [Main Program]
 
 ```C++
 #include <iostream>
-#include "pelajaran.h"
+#include "singlylist.h"
 using namespace std;
 
-int main() {
-    string namapel = "Struktur Data";
-    string kodepel = "STD";
-    pelajaran pel = create_pelajaran(namapel, kodepel);
-    tampil_pelajaran(pel);
-    return 0;
+int main(){
+    list L;
+    buatList(L);
+
+    node *a=buatNode(5);
+    node *b=buatNode(7);
+    node *c=buatNode(9);
+    node *d=buatNode(2);
+    node *e=buatNode(8);
+    node *f=buatNode(12);
+
+    insertAwal(L,a);
+    insertAkhir(L,b);
+    insertAkhir(L,c);
+    insertAwal(L,d);
+    insertAfter(b,e);
+    insertAkhir(L,f);
+
+    cout<<"Isi list : ";
+    tampil(L);
 }
 ```
-Membuat objek pelajaran baru lalu menampilkan datanya ke layar.
+
 
 #### Output:
-<img width="873" height="146" alt="s2 ss" src="https://github.com/user-attachments/assets/610f6af3-7092-45ad-b676-65224e6a804b" />
+<img width="869" height="96" alt="1 ss" src="https://github.com/user-attachments/assets/ec657173-0334-4f61-8f47-f5e60902b4a3" />
 
-Program ini pakai struct sebagai ADT buat nyimpen nama dan kode pelajaran. Data dibuat lewat fungsi create_pelajaran, lalu ditampilin ke layar pakai tampil_pelajaran biar pengguna bisa lihat hasilnya.
+Program ini menerapkan ADT Singly Linked List untuk menyimpan data secara dinamis. Struktur node berisi data dan pointer ke node berikutnya. Melalui fungsi insertAwal, insertAkhir, dan insertAfter, data dimasukkan ke dalam list, kemudian seluruh isi list ditampilkan ke layar.
 
 #### Full code Screenshot:
-<img width="1917" height="1139" alt="s2 fss" src="https://github.com/user-attachments/assets/87104152-690f-48b1-bd40-dfb0b754a33a" />
+<img width="1917" height="1137" alt="1 fss" src="https://github.com/user-attachments/assets/ff19e29d-bbb8-4504-804b-95a2751f50a0" />
 
 
-### 3. [Tukar Array dan Pointer]
+### 2. [ADT Singly Linked++]
 
+### a. [Header File]
 ```C++
+#ifndef SINGLYLIST_H
+#define SINGLYLIST_H
+
 #include <iostream>
 using namespace std;
 
-void tampil(int a[3][3]){
-    for(int i=0;i<3;i++){
-        for(int j=0;j<3;j++){
-            cout<<a[i][j]<<" ";
-        }
-        cout<<endl;
+struct node{
+    int data;
+    node *next;
+};
+
+struct list{
+    node *first;
+};
+
+void buatList(list &L);
+node* buatNode(int x);
+void insertAwal(list &L,node *n);
+void insertAkhir(list &L,node *n);
+void insertAfter(node *prev,node *n);
+void tampil(list L);
+
+void deleteFirst(list &L);
+void deleteLast(list &L);
+void deleteAfter(node *prev);
+int nbList(list L);
+void deleteList(list &L);
+
+#endif
+```
+
+
+### b. [Source File]
+
+```C++
+#include "singlylist.h"
+#include <iostream>
+using namespace std;
+
+void buatList(list &L){
+    L.first=NULL;
+}
+
+node* buatNode(int x){
+    node *n=new node;
+    n->data=x;
+    n->next=NULL;
+    return n;
+}
+
+void insertAwal(list &L,node *n){
+    if(L.first==NULL) L.first=n;
+    else{
+        n->next=L.first;
+        L.first=n;
     }
 }
 
-void tukarArr(int x[3][3], int y[3][3], int r, int c){
-    int tmp = x[r][c];
-    x[r][c] = y[r][c];
-    y[r][c] = tmp;
+void insertAkhir(list &L,node *n){
+    if(L.first==NULL) L.first=n;
+    else{
+        node *p=L.first;
+        while(p->next!=NULL) p=p->next;
+        p->next=n;
+    }
 }
 
-void tukarPtr(int *a, int *b){
-    int tmp = *a;
-    *a = *b;
-    *b = tmp;
+void insertAfter(node *prev,node *n){
+    if(prev!=NULL){
+        n->next=prev->next;
+        prev->next=n;
+    }
 }
 
-int main(){
-    int A[3][3] = {{3,16,9},{1,12,1},{2,51,8}};
-    int B[3][3] = {{21,3,5},{7,9,23},{4,65,8}};
-    int *p1, *p2;
-    int n1=10, n2=20;
+void tampil(list L){
+    node *p=L.first;
+    while(p!=NULL){
+        cout<<p->data<<" ";
+        p=p->next;
+    }
+    cout<<endl;
+}
 
-    p1=&n1;
-    p2=&n2;
+void deleteFirst(list &L){
+    if(L.first!=NULL){
+        node *p=L.first;
+        L.first=p->next;
+        delete p;
+    }
+}
 
-    cout<<"Array A:"<<endl;
-    tampil(A);
-    cout<<"Array B:"<<endl;
-    tampil(B);
+void deleteLast(list &L){
+    if(L.first!=NULL){
+        node *p=L.first;
+        node *q=NULL;
+        while(p->next!=NULL){
+            q=p;
+            p=p->next;
+        }
+        if(q==NULL) L.first=NULL;
+        else q->next=NULL;
+        delete p;
+    }
+}
 
-    cout<<"\nTukar posisi (1,1)"<<endl;
-    tukarArr(A,B,1,1);
+void deleteAfter(node *prev){
+    if(prev!=NULL && prev->next!=NULL){
+        node *p=prev->next;
+        prev->next=p->next;
+        delete p;
+    }
+}
 
-    cout<<"Array A sekarang:"<<endl;
-    tampil(A);
-    cout<<"Array B sekarang:"<<endl;
-    tampil(B);
+int nbList(list L){
+    int n=0;
+    node *p=L.first;
+    while(p!=NULL){
+        n++;
+        p=p->next;
+    }
+    return n;
+}
 
-    cout<<"\nNilai sebelum tukar pointer: "<<n1<<" dan "<<n2<<endl;
-    tukarPtr(p1,p2);
-    cout<<"Nilai sesudah tukar pointer: "<<n1<<" dan "<<n2<<endl;
-
-    return 0;
+void deleteList(list &L){
+    node *p=L.first;
+    while(p!=NULL){
+        node *tmp=p;
+        p=p->next;
+        delete tmp;
+    }
+    L.first=NULL;
 }
 ```
-#### Output:
-<img width="1259" height="531" alt="s3 ss" src="https://github.com/user-attachments/assets/95ef3d82-f84d-43b5-be3b-476294fed2bc" />
 
-Program ini menampilkan dua array 3x3, menukar elemen tertentu antar array, dan menukar nilai dua variabel menggunakan pointer. Hasil perubahan ditampilkan agar terlihat efek tukarnya.
+
+### c. [Main Program]
+
+```C++
+#include <iostream>
+#include "Singlylist.h"
+using namespace std;
+
+int main(){
+    list L;
+    buatList(L);
+
+    node *a=buatNode(5);
+    node *b=buatNode(7);
+    node *c=buatNode(9);
+    node *d=buatNode(2);
+    node *e=buatNode(8);
+    node *f=buatNode(12);
+
+    insertAwal(L,a);
+    insertAkhir(L,b);
+    insertAkhir(L,c);
+    insertAwal(L,d);
+    insertAfter(b,e);
+    insertAkhir(L,f);
+
+    tampil(L);
+
+    deleteFirst(L);
+    deleteLast(L);
+    deleteAfter(b);
+
+    tampil(L);
+    cout<<"Jumlah node: "<<nbList(L)<<endl;
+
+    deleteList(L);
+    cout<<"List berhasil terhapus\n";
+    cout<<"Jumlah node: "<<nbList(L)<<endl;
+}
+
+```
+
+
+#### Output:
+<img width="884" height="198" alt="2 ss" src="https://github.com/user-attachments/assets/d15f8a96-7586-4d50-a415-528ade21775f" />
+
+Program ini merupakan pengembangan dari ADT Single Linked sebelumnya, tapi ada tambahan beberapa fungsi untuk hapus data dan hitung jumlah node. Strukturnya masih pakai node dengan data dan pointer next. Bedanya, sekarang ada fungsi deleteFirst, deleteLast, deleteAfter, nbList, dan deleteList. Jadi selain bisa nambah data lewat insertAwal, insertAkhir, dan insertAfter, program ini juga bisa hapus dan bersihin list.
 
 #### Full code Screenshot:
-<img width="1919" height="1137" alt="s3 fss" src="https://github.com/user-attachments/assets/7d40f181-906d-4685-b349-2b5b6f6025cc" />
+<img width="1919" height="1137" alt="2 fss" src="https://github.com/user-attachments/assets/a9c0357f-1f49-4c36-8cc1-5c492ae8c39b" />
 
 
 ## Kesimpulan
