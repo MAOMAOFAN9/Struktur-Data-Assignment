@@ -8,7 +8,7 @@ Searching merupakan operasi dasar pada list untuk mencari node tertentu dengan m
 
 Dalam Linked List, proses pencarian berjalan lambat karena harus dilakukan secara berurutan (sequential search). Namun, kecepatan pencarian dapat ditingkatkan dengan menambahkan indeks pada list.[1]<br>
 Teknik seperti menambahkan lane linked list sebagai indeks dapat membantu melewati beberapa node sehingga proses pencarian menjadi lebih cepat: <br>
-Kami menggunakan lane untuk mengunjungi dan memeriksa jumlah node seminimal mungkin... Ketika kami melewati beberapa node, kami juga melewati waktu yang dibutuhkan untuk memeriksa node-node yang berada di antara dua node dalam daftar lane[1]<br>
+Kami menggunakan lane untuk mengunjungi dan memeriksa jumlah node seminimal mungkin. Saat menggunakan lane, beberapa node yang berada di antara node lane saat ini dan node lane sebelumnya akan dilewati sesuai dengan pembagian yang telah ditentukan. Dengan melewati beberapa node ini, waktu yang dibutuhkan untuk memeriksa node-node di antara dua node lane tersebut juga dapat dihemat.[1]<br>
 Dengan begitu, meskipun ADT singly linked list sangat berguna untuk operasi dinamis, aspek pencarian memerlukan perhatian khusus dan optimasi agar kinerjanya lebih baik.
 
 ## Guided 
