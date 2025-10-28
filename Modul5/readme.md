@@ -659,7 +659,7 @@ int main(){
 <br>
 
 Program ini merupakan lanjutan dari modul sebelumnya, dengan fokus pada penambahan dua fungsi baru yaitu findElm() dan totalInfo(). Struktur list masih sama, di mana setiap node berisi data dan pointer yang menunjuk ke node berikutnya. Pada program ini, list diisi dengan nilai 2, 0, 8, 12, dan 9.<br>
-Program kemudian menjalankan tiga bagian utama, yaitu:<br>
+soal meminta menjalankan tiga bagian, yaitu:<br>
 - menampilkan seluruh elemen dalam list<br>
 - mencari alamat node yang memiliki nilai 8 menggunakan fungsi findElm()<br>
 - serta menghitung total nilai dari semua elemen list menggunakan fungsi totalInfo()
