@@ -431,7 +431,7 @@ int main() {
 }
 ```
 
-Program ini 
+Program ini mengimplementasikan ADT Singly Linked List dalam C++ untuk mengelola data buah. Konsep yang digunakan meliputi node, pointer, dan manajemen memori dinamis guna melakukan operasi penyimpanan, penambahan, penghapusan, pembaruan, serta pencarian data.
 
 ## Unguided 
 
