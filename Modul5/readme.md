@@ -657,7 +657,7 @@ int main(){
 #### Output:
 <img width="379" height="28" alt="Screenshot 2025-10-28 130813" src="https://github.com/user-attachments/assets/3d2b31aa-df84-468f-934e-50916299e5c0" />
 
-
+<br>
 Program ini merupakan lanjutan dari modul sebelumnya, dengan fokus pada penambahan dua fungsi baru yaitu findElm() dan totalInfo(). Struktur list masih sama, di mana setiap node berisi data dan pointer yang menunjuk ke node berikutnya. Pada program ini, list diisi dengan nilai 2, 0, 8, 12, dan 9.<br>
 Program kemudian menjalankan tiga bagian utama, yaitu:<br>
 - menampilkan seluruh elemen dalam list
