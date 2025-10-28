@@ -21,7 +21,7 @@ Beberapa operasi dasar yang digunakan :
 
 ## Guided 
 
-### 1. [List Buah ADT]
+### 1. [ADT ListBuah]
 
 ### a. [Header File]
 ```C++
