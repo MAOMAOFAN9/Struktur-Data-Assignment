@@ -3,25 +3,17 @@
 
 ## Dasar Teori
 
-Singly Linked List <br>
-Singly Linked List adalah struktur data dinamis yang tersusun dari sekumpulan node yang saling terhubung lewat pointer. Setiap node berisi data dan alamat node berikutnya. Tidak seperti array, elemen-elemen pada linked list tidak tersimpan berurutan di memori, tapi dihubungkan menggunakan pointer next. <br>
+Searching <br>
+Searching merupakan operasi dasar pada list untuk mencari node tertentu dengan menelusuri setiap node hingga ditemukan. Proses ini memudahkan operasi-operasi seperti insert after, delete after, dan update. Semua fungsi dasar tersebut merupakan bagian dari ADT pada singly linked list dan diimplementasikan dalam file .c dan .h.<br>
 
-Linked list juga merupakan struktur data list yang diimplementasikan sebagai node dengan dua entitas: data dan pointer.[1]. <br>
-
-Dalam linked list, jumlah elemen tidak perlu ditentukan sebelumnya, dan memorinya dapat dialokasikan atau dilepaskan selama pemrosesan sesuai kebutuhan, sehingga proses penyisipan dan penghapusan menjadi lebih mudah dan sederhana[2]. <br>
-
-Beberapa operasi dasar yang digunakan :
-- createList() untuk membuat list kosong.
-- alokasi() untuk membuat node baru.
-- insertFirst(), insertAfter(), dan insertLast() untuk menambah node di posisi berbeda.
-- delFirst(), delAfter(), dan delLast() untuk menghapus node dari list.
-- printList() untuk menampilkan isi list.
-- nbList() untuk menghitung jumlah node.
-- deleteList() untuk menghapus seluruh isi list.
+Dalam Linked List, proses pencarian berjalan lambat karena harus dilakukan secara berurutan (sequential search). Namun, kecepatan pencarian dapat ditingkatkan dengan menambahkan indeks pada list.[1]<br>
+Teknik seperti menambahkan lane linked list sebagai indeks dapat membantu melewati beberapa node sehingga proses pencarian menjadi lebih cepat: <br>
+Kami menggunakan lane untuk mengunjungi dan memeriksa jumlah node seminimal mungkin... Ketika kami melewati beberapa node, kami juga melewati waktu yang dibutuhkan untuk memeriksa node-node yang berada di antara dua node dalam daftar lane[1]<br>
+Dengan begitu, meskipun ADT singly linked list sangat berguna untuk operasi dinamis, aspek pencarian memerlukan perhatian khusus dan optimasi agar kinerjanya lebih baik.
 
 ## Guided 
 
-### 1. [ADT ListBuah]
+### [ADT ListBuah]
 
 ### a. [Header File]
 ```C++
@@ -443,7 +435,7 @@ Program ini
 
 ## Unguided 
 
-### 1. [ADT Singly Linked]
+### [Updated ADT singlylist]
 
 ### a. [Header File]
 ```C++
@@ -453,147 +445,20 @@ Program ini
 #include <iostream>
 using namespace std;
 
-struct node{
+struct node {
     int data;
     node *next;
 };
 
-struct list{
+struct list {
     node *first;
 };
 
 void buatList(list &L);
 node* buatNode(int x);
-void insertAwal(list &L,node *n);
-void insertAkhir(list &L,node *n);
-void insertAfter(node *prev,node *n);
-void tampil(list L);
-
-#endif
-```
-
-
-### b. [Source File]
-
-```C++
-#include "singlylist.h"
-#include <iostream>
-using namespace std;
-
-void buatList(list &L){
-    L.first=NULL;
-}
-
-node* buatNode(int x){
-    node *n = new node;
-    n->data=x;
-    n->next=NULL;
-    return n;
-}
-
-void insertAwal(list &L,node *n){
-    if(L.first==NULL){
-        L.first=n;
-    }else{
-        n->next=L.first;
-        L.first=n;
-    }
-}
-
-void insertAkhir(list &L,node *n){
-    if(L.first==NULL){
-        L.first=n;
-    }else{
-        node *p=L.first;
-        while(p->next!=NULL){
-            p=p->next;
-        }
-        p->next=n;
-    }
-}
-
-void insertAfter(node *prev,node *n){
-    if(prev!=NULL){
-        n->next=prev->next;
-        prev->next=n;
-    }
-}
-
-void tampil(list L){
-    node *p=L.first;
-    while(p!=NULL){
-        cout<<p->data<<" ";
-        p=p->next;
-    }
-    cout<<endl;
-}
-```
-
-
-### c. [Main Program]
-
-```C++
-#include <iostream>
-#include "singlylist.h"
-using namespace std;
-
-int main(){
-    list L;
-    buatList(L);
-
-    node *a=buatNode(5);
-    node *b=buatNode(7);
-    node *c=buatNode(9);
-    node *d=buatNode(2);
-    node *e=buatNode(8);
-    node *f=buatNode(12);
-
-    insertAwal(L,a);
-    insertAkhir(L,b);
-    insertAkhir(L,c);
-    insertAwal(L,d);
-    insertAfter(b,e);
-    insertAkhir(L,f);
-
-    cout<<"Isi list : ";
-    tampil(L);
-}
-```
-
-
-#### Output:
-<img width="869" height="96" alt="1 ss" src="https://github.com/user-attachments/assets/ec657173-0334-4f61-8f47-f5e60902b4a3" />
-
-Program ini menerapkan ADT Singly Linked List untuk menyimpan data secara dinamis. Struktur node berisi data dan pointer ke node berikutnya. Melalui fungsi insertAwal, insertAkhir, dan insertAfter, data dimasukkan ke dalam list, kemudian seluruh isi list ditampilkan ke layar.
-
-#### Full code Screenshot:
-<img width="1917" height="1137" alt="1 fss" src="https://github.com/user-attachments/assets/ff19e29d-bbb8-4504-804b-95a2751f50a0" />
-
-
-### 2. [ADT Singly Linked++]
-
-### a. [Header File]
-```C++
-#ifndef SINGLYLIST_H
-#define SINGLYLIST_H
-
-#include <iostream>
-using namespace std;
-
-struct node{
-    int data;
-    node *next;
-};
-
-struct list{
-    node *first;
-};
-
-void buatList(list &L);
-node* buatNode(int x);
-void insertAwal(list &L,node *n);
-void insertAkhir(list &L,node *n);
-void insertAfter(node *prev,node *n);
+void insertAwal(list &L, node *n);
+void insertAkhir(list &L, node *n);
+void insertAfter(node *prev, node *n);
 void tampil(list L);
 
 void deleteFirst(list &L);
@@ -602,6 +467,10 @@ void deleteAfter(node *prev);
 int nbList(list L);
 void deleteList(list &L);
 
+//update singlylist modul 5
+node* findElm(list L, int x);
+int totalInfo(list L);
+
 #endif
 ```
 
@@ -614,97 +483,117 @@ void deleteList(list &L);
 using namespace std;
 
 void buatList(list &L){
-    L.first=NULL;
+    L.first = NULL;
 }
 
 node* buatNode(int x){
-    node *n=new node;
-    n->data=x;
-    n->next=NULL;
+    node *n = new node;
+    n->data = x;
+    n->next = NULL;
     return n;
 }
 
-void insertAwal(list &L,node *n){
-    if(L.first==NULL) L.first=n;
-    else{
-        n->next=L.first;
-        L.first=n;
+void insertAwal(list &L, node *n){
+    if(L.first == NULL) L.first = n;
+    else {
+        n->next = L.first;
+        L.first = n;
     }
 }
 
-void insertAkhir(list &L,node *n){
-    if(L.first==NULL) L.first=n;
-    else{
-        node *p=L.first;
-        while(p->next!=NULL) p=p->next;
-        p->next=n;
+void insertAkhir(list &L, node *n){
+    if(L.first == NULL) L.first = n;
+    else {
+        node *p = L.first;
+        while(p->next != NULL) p = p->next;
+        p->next = n;
     }
 }
 
-void insertAfter(node *prev,node *n){
-    if(prev!=NULL){
-        n->next=prev->next;
-        prev->next=n;
+void insertAfter(node *prev, node *n){
+    if(prev != NULL){
+        n->next = prev->next;
+        prev->next = n;
     }
 }
 
 void tampil(list L){
-    node *p=L.first;
-    while(p!=NULL){
-        cout<<p->data<<" ";
-        p=p->next;
+    node *p = L.first;
+    while(p != NULL){
+        cout << p->data << " ";
+        p = p->next;
     }
-    cout<<endl;
+    cout << endl;
 }
 
 void deleteFirst(list &L){
-    if(L.first!=NULL){
-        node *p=L.first;
-        L.first=p->next;
+    if(L.first != NULL){
+        node *p = L.first;
+        L.first = p->next;
         delete p;
     }
 }
 
 void deleteLast(list &L){
-    if(L.first!=NULL){
-        node *p=L.first;
-        node *q=NULL;
-        while(p->next!=NULL){
-            q=p;
-            p=p->next;
+    if(L.first != NULL){
+        node *p = L.first;
+        node *q = NULL;
+        while(p->next != NULL){
+            q = p;
+            p = p->next;
         }
-        if(q==NULL) L.first=NULL;
-        else q->next=NULL;
+        if(q == NULL) L.first = NULL;
+        else q->next = NULL;
         delete p;
     }
 }
 
 void deleteAfter(node *prev){
-    if(prev!=NULL && prev->next!=NULL){
-        node *p=prev->next;
-        prev->next=p->next;
+    if(prev != NULL && prev->next != NULL){
+        node *p = prev->next;
+        prev->next = p->next;
         delete p;
     }
 }
 
 int nbList(list L){
-    int n=0;
-    node *p=L.first;
-    while(p!=NULL){
+    int n = 0;
+    node *p = L.first;
+    while(p != NULL){
         n++;
-        p=p->next;
+        p = p->next;
     }
     return n;
 }
 
 void deleteList(list &L){
-    node *p=L.first;
-    while(p!=NULL){
-        node *tmp=p;
-        p=p->next;
+    node *p = L.first;
+    while(p != NULL){
+        node *tmp = p;
+        p = p->next;
         delete tmp;
     }
-    L.first=NULL;
+    L.first = NULL;
+}
+
+//update singlylist modul 5
+node* findElm(list L, int x){
+    node *p = L.first;
+    while(p != NULL && p->data != x){
+        p = p->next;
+    }
+    return p;
+}
+
+
+int totalInfo(list L){
+    int total = 0;
+    node *p = L.first;
+    while(p != NULL){
+        total += p->data;
+        p = p->next;
+    }
+    return total;
 }
 ```
 
@@ -713,61 +602,79 @@ void deleteList(list &L){
 
 ```C++
 #include <iostream>
-#include "Singlylist.h"
+#include "singlylist.h"
 using namespace std;
 
 int main(){
     list L;
     buatList(L);
 
-    node *a=buatNode(5);
-    node *b=buatNode(7);
-    node *c=buatNode(9);
-    node *d=buatNode(2);
-    node *e=buatNode(8);
-    node *f=buatNode(12);
+    //update singlylist dari modul 4 dan ganti sesuai modul 5
+    node *P1 = buatNode(2);
+    node *P2 = buatNode(0);
+    node *P3 = buatNode(8);
+    node *P4 = buatNode(12);
+    node *P5 = buatNode(9);
 
-    insertAwal(L,a);
-    insertAkhir(L,b);
-    insertAkhir(L,c);
-    insertAwal(L,d);
-    insertAfter(b,e);
-    insertAkhir(L,f);
+    insertAwal(L, P1); 
+    insertAwal(L, P2); 
+    insertAwal(L, P3); 
+    insertAwal(L, P4);
+    insertAwal(L, P5); 
 
+    cout << endl;
+    cout << "Isi kelima elemen: ";
     tampil(L);
+    cout << endl;
 
-    deleteFirst(L);
-    deleteLast(L);
-    deleteAfter(b);
+    node *found = findElm(L, 8);
+    if (found != NULL)
+        cout << "Elemen dengan nilai 8 ditemukan di alamat: " << found << endl;
+    else
+        cout << "Elemen dengan nilai 8 tidak ditemukan." << endl;
+    cout << endl;
 
-    tampil(L);
-    cout<<"Jumlah node: "<<nbList(L)<<endl;
+    
+    cout << "Total info dari kelima elemen adalah : " << totalInfo(L) << endl;
+    cout << endl;
 
-    deleteList(L);
-    cout<<"List berhasil terhapus\n";
-    cout<<"Jumlah node: "<<nbList(L)<<endl;
+    return 0;
 }
-
 ```
+<br>
 
-
+### 2. [Hasil Implementasi ADT Singly Linked List]
 #### Output:
-<img width="884" height="198" alt="2 ss" src="https://github.com/user-attachments/assets/d15f8a96-7586-4d50-a415-528ade21775f" />
+<img width="300" height="29" alt="Screenshot 2025-10-28 130758" src="https://github.com/user-attachments/assets/e5881b5b-b1dc-4065-97b6-ab03aaeda646" />
 
-Program ini merupakan pengembangan dari ADT Single Linked sebelumnya, tapi ada tambahan beberapa fungsi untuk hapus data dan hitung jumlah node. Strukturnya masih pakai node dengan data dan pointer next. Bedanya, sekarang ada fungsi deleteFirst, deleteLast, deleteAfter, nbList, dan deleteList. Jadi selain bisa nambah data lewat insertAwal, insertAkhir, dan insertAfter, program ini juga bisa hapus dan bersihin list.
+
+### 3. [Buat fungsi findElm(L, x) untuk mencari elemen dengan info = 8 dan mengembalikan alamat node tersebut]
+#### Output:
+<img width="520" height="29" alt="Screenshot 2025-10-28 130806" src="https://github.com/user-attachments/assets/ddf352ab-d3e9-4940-9a76-36a6db1483f0" />
+
+
+### 4. [Buat fungsi untuk menghitung total nilai dari seluruh list elemen (9 + 12 + 8 + 0 + 2 = 31)]
+#### Output:
+<img width="379" height="28" alt="Screenshot 2025-10-28 130813" src="https://github.com/user-attachments/assets/3d2b31aa-df84-468f-934e-50916299e5c0" />
+
+
+Program ini merupakan lanjutan dari modul sebelumnya, dengan fokus pada penambahan dua fungsi baru yaitu findElm() dan totalInfo(). Struktur list masih sama, di mana setiap node berisi data dan pointer yang menunjuk ke node berikutnya. Pada program ini, list diisi dengan nilai 2, 0, 8, 12, dan 9.<br>
+Program kemudian menjalankan tiga bagian utama, yaitu:<br>
+- menampilkan seluruh elemen dalam list
+- mencari alamat node yang memiliki nilai 8 menggunakan fungsi findElm()
+- serta menghitung total nilai dari semua elemen list menggunakan fungsi totalInfo()
 
 #### Full code Screenshot:
-<img width="1919" height="1137" alt="2 fss" src="https://github.com/user-attachments/assets/a9c0357f-1f49-4c36-8cc1-5c492ae8c39b" />
+<img width="1919" height="1138" alt="Screenshot 2025-10-28 132821" src="https://github.com/user-attachments/assets/f697a076-85fa-49be-a30b-d63f924d9356" />
 
 
 ## Kesimpulan
-Secara keseluruhan, modul dan praktikum Singly Linked List membahas cara mengelola data secara dinamis menggunakan node yang saling terhubung. Materi mencakup proses penambahan, penghapusan, hingga perhitungan data dalam list.
+Ssingly linked list dapat digunakan untuk menampilkan data, mencari elemen tertentu, dan menghitung total nilai elemen dengan bantuan fungsi findElm() dan totalInfo().
 
 ## Referensi
-[1] Analysis of Arraylist dan Linked List oleh: K. Renuka Devi. Diakses pada 20 Oktober 2025 melalui: <br>
-https://www.scribd.com/document/756597574/263-IJCSE-07046-23?utm <br>
-[2] Review Paper On Dynamic Implementation Using Linked List oleh: Manish saini, Ankush Sharma. Diakses pada 20 Oktober 2025 melalui: <br>
-https://www.researchgate.net/publication/329609389_Review_Paper_On_Dynamic_Implementation_Using_Linked_List_Chandigarh_universty
+[1] Analysis of Arraylist dan Linked List oleh: Sarvesh Rakesh Bhatnagar. Diakses pada 28 Oktober 2025 melalui: <br>
+[https://www.scribd.com/document/756597574/263-IJCSE-07046-23?utm](https://www.ijcaonline.org/archives/volume182/number18/29977-2018917892/?utm_source) <br>
+[2]
 
 
 
