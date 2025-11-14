@@ -1,5 +1,5 @@
-# <h1 align="center">Laporan Praktikum Modul 5 - Singly Linked List (Bagian Kedua) (ADT)</h1>
-<p align="center">Rafhael Januar Turnip</p>
+# <h1 align="center">Laporan Praktikum Modul 6 - Double Linked List (Bagian Kedua) (ADT)</h1>
+<p align="center">Rafhael Januar Turnip - 103112400209</p>
 
 ## Dasar Teori
 
