@@ -619,9 +619,15 @@ int main() {
 
 <br>
 <br>
-Program ini berfungsi untuk membuat stack dengan menggunakan array. Pada fungsi kali ini,user dapat menginput isi array dengan beberapa nilai data dan akan berhenti jika user menginput 'enter'. 
-Bedanya, di program ini kita tidak menggunakan fungsi push dan menggunakan fungsi getInputStream sebagai inputannya, sehingga user dapat menambahkan inputan hingga nilai array max. 
-Program ini juga menampilkan hasil urutan membalik isi stack dengan fungsi balikStack dan menampilkannya dengan fungsi printInfo.
+Program ini mengimplementasikan struktur data Stack dengan media array dan memperlihatkan tiga cara pengolahan data dalam satu rangkaian percobaan.<br>
+
+1. Pada bagian pertama, program menjalankan operasi dasar stack dengan prinsip LIFO. Data dimasukkan menggunakan push dan diambil dengan pop, sehingga terlihat bagaimana elemen yang terakhir masuk menjadi yang pertama keluar. Beberapa nilai juga dihapus untuk menunjukkan perubahan susunan elemen pada stack.
+
+2. Di bagian berikutnya, program menggunakan pushAscending. Berbeda dari push biasa, fungsi ini tidak hanya menambah data, tetapi juga memastikan posisi data tetap terurut dari nilai kecil ke besar. Dengan demikian, isi stack selalu tersusun otomatis tanpa perlu pengurutan tambahan.
+
+3. Percobaan terakhir memakai fungsi getInputStream, di mana program menerima input angka dari pengguna secara langsung. Setiap karakter angka yang diketik akan langsung dimasukkan ke stack sampai pengguna menekan Enter. Cara ini membuat proses pengisian lebih fleksibel tanpa harus memanggil push berkali-kali secara manual.
+
+Di akhir setiap skenario di atas, program selalu menampilkan status terkini stack menggunakan fungsi printInfo , kemudian membalik urutan seluruh elemen stack menggunakan fungsi balikStack, dan menampilkan kembali hasil pembalikan tersebut untuk memperlihatkan urutan data yang berlawanan.<br>
 
 ## Kesimpulan
 Pada praktikum kali ini, kita diberikan beberapa fungsi tambahan pada stack yaitu pushAscending yaitu bukan hanya sekedar menginput dan menaruh data di dalam stack, 
