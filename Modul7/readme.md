@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 6 - Stack (ADT)</h1>
+# <h1 align="center">Laporan Praktikum Modul 7 - Stack (ADT)</h1>
 <p align="center">Rafhael Januar Turnip - 103112400209</p>
 
 ## Dasar Teori
