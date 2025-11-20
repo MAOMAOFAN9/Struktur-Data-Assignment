@@ -564,6 +564,6 @@ int main(){
 }
 }
 ```
-#### Output Soal 1:
+#### Output Soal 4:
 <img width="1544" height="615" alt="Screenshot 2025-11-20 092320" src="https://github.com/user-attachments/assets/7c1b49d7-c22b-4266-84d4-fde5700c3e67" />
 
