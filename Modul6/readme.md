@@ -897,6 +897,8 @@ int deleteAllMatches(List &L, string nopol);
 
 #endif
 ```
+#### Full code Screenshot:
+<img width="1917" height="1134" alt="Screenshot 2025-11-13 193108" src="https://github.com/user-attachments/assets/e24fede4-fd33-4a08-82d0-111593ec4d61" />
 
 
 ### b. [Source File / "doublylist.cpp"]
@@ -1045,7 +1047,8 @@ void deleteAfter(List &L, address Prec, address &P) {
     }
 }
 ```
-
+#### Full code Screenshot:
+<img width="1919" height="1140" alt="Screenshot 2025-11-13 193128" src="https://github.com/user-attachments/assets/ddc924ca-477f-4753-9a82-2ea5f3f93710" />
 
 ### c. [Main Program / "main.cpp"]
 
@@ -1110,6 +1113,10 @@ int main() {
     return 0;
 }
 ```
+#### Full code Screenshot:
+<img width="1919" height="1137" alt="Screenshot 2025-11-13 193049" src="https://github.com/user-attachments/assets/751bb7a5-2693-4cc8-9949-98d2b8d7f881" />
+
+<br>
 <br>
 
 ### LATIHAN <br>
