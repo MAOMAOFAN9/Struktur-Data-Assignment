@@ -897,6 +897,8 @@ int deleteAllMatches(List &L, string nopol);
 
 #endif
 ```
+#### Full code Screenshot:
+<img width="1917" height="1134" alt="Screenshot 2025-11-13 193108" src="https://github.com/user-attachments/assets/e24fede4-fd33-4a08-82d0-111593ec4d61" />
 
 
 ### b. [Source File / "doublylist.cpp"]
@@ -1045,7 +1047,8 @@ void deleteAfter(List &L, address Prec, address &P) {
     }
 }
 ```
-
+#### Full code Screenshot:
+<img width="1919" height="1140" alt="Screenshot 2025-11-13 193128" src="https://github.com/user-attachments/assets/ddc924ca-477f-4753-9a82-2ea5f3f93710" />
 
 ### c. [Main Program / "main.cpp"]
 
@@ -1110,37 +1113,35 @@ int main() {
     return 0;
 }
 ```
+#### Full code Screenshot:
+<img width="1919" height="1137" alt="Screenshot 2025-11-13 193049" src="https://github.com/user-attachments/assets/751bb7a5-2693-4cc8-9949-98d2b8d7f881" />
+
+<br>
 <br>
 
-### LATIHAN <br>
+## Pengerjaan Latihan Modul 7 - Stack
 
-### 1. [Buatlah implementasi ADT Doubly Linked list pada file “Doublylist.cpp” dan coba hasil implementasi ADT pada file “main.cpp”.]
-#### Output:
+### 1. 
+<img width="558" height="907" alt="Screenshot 2025-11-20 072246" src="https://github.com/user-attachments/assets/75dcf7d1-bd9f-4234-93f1-2a3eb66553cd" />
+
+#### Output Latihan 1:
 <img width="991" height="728" alt="Screenshot 2025-11-13 192554" src="https://github.com/user-attachments/assets/dcf160fb-191b-4da7-8771-58ebc7dd78f5" />
 
 
-### 2. [Buat fungsi findElm(L, x) untuk mencari elemen dengan info = 8 dan mengembalikan alamat node tersebut]
-#### Output:
+### 2. 
+<img width="558" height="163" alt="Screenshot 2025-11-20 072253" src="https://github.com/user-attachments/assets/d32767f0-1efb-44ba-856b-6a515d59ba50" />
+
+#### Output Latihan 2:
 <img width="360" height="227" alt="Screenshot 2025-11-13 192605" src="https://github.com/user-attachments/assets/c837cb07-410f-42fe-bc62-78f9e49dbf14" />
 
 
-### 3. [Hapus elemen dengan nomor polisi D003 dengan procedure delete]
-#### Output:
+### 3.
+<img width="495" height="274" alt="Screenshot 2025-11-20 072300" src="https://github.com/user-attachments/assets/186fa533-0933-4403-a1e6-564c00f5f41e" />
+ 
+#### Output Latihan 3:
 <img width="662" height="341" alt="Screenshot 2025-11-13 192614" src="https://github.com/user-attachments/assets/283415a8-b7ee-4adc-b045-81a7c9a3c099" />
 
 
-#### Full code Screenshot:
-### a. ["doublylist.h"]
-#### Output:
-<img width="1917" height="1134" alt="Screenshot 2025-11-13 193108" src="https://github.com/user-attachments/assets/e24fede4-fd33-4a08-82d0-111593ec4d61" />
-
-### b. ["doublylist.cpp"]
-#### Output:
-<img width="1919" height="1140" alt="Screenshot 2025-11-13 193128" src="https://github.com/user-attachments/assets/ddc924ca-477f-4753-9a82-2ea5f3f93710" />
-
-### c. ["main.cpp"]
-#### Output:
-<img width="1919" height="1137" alt="Screenshot 2025-11-13 193049" src="https://github.com/user-attachments/assets/751bb7a5-2693-4cc8-9949-98d2b8d7f881" />
 
 
 Sistem Manajemen Data Kendaraan yang menggunakan struktur data Doubly Linked List (Daftar Berantai Dua Arah) untuk menyimpan dan mengelola informasi Nomor Polisi, Warna, dan Tahun Pembuatan secara dinamis. Inti dari program ini adalah mengizinkan data yang duplikat (Nomor Polisi yang sama boleh dimasukkan lebih dari satu kali) dan menyediakan fungsionalitas lanjutan (searchAndPrintAll dan deleteAllMatches) untuk mencari serta menghapus semua data kendaraan yang cocok dengan kriteria yang diberikan, bukan hanya data pertama.
