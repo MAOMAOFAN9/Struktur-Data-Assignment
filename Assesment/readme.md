@@ -454,5 +454,116 @@ int main(){
 
 
 
+### [soal 4]
 
+### a. [Header File]
+```C++
+#ifndef QUEUEPENGIRIMAN_H
+#define QUEUEPENGIRIMAN_H
+#include <string>
+using namespace std;
+
+struct Paket {
+    string Resi, Pengirim, Tujuan;
+    int Berat;
+};
+
+const int MAX = 5;
+
+struct Queue {
+    Paket data[MAX];
+    int head, tail;
+};
+
+void createQueue(Queue &Q);
+bool isEmpty(Queue Q);
+bool isFull(Queue Q);
+
+void enQueue(Queue &Q, Paket P);
+void deQueue(Queue &Q, Paket &P);
+void viewQueue(Queue Q);
+
+long long totalBiaya(Queue Q);
+
+#endif
+```
+
+
+### b. [Source File]
+
+```C++
+#include "QueuePengiriman.h"
+#include <iostream>
+using namespace std;
+
+void createQueue(Queue &Q){ Q.head = Q.tail = -1; }
+bool isEmpty(Queue Q){ return Q.head == -1; }
+bool isFull(Queue Q){ return Q.tail == MAX-1; }
+
+void enQueue(Queue &Q, Paket P){
+    if(isFull(Q)) return;
+    if(isEmpty(Q)){
+        Q.head = Q.tail = 0;
+        Q.data[0] = P;
+    } else {
+        Q.data[++Q.tail] = P;
+    }
+}
+
+void deQueue(Queue &Q, Paket &P){
+    if(isEmpty(Q)) return;
+    P = Q.data[Q.head];
+    for(int i=Q.head;i<Q.tail;i++)
+        Q.data[i] = Q.data[i+1];
+    Q.tail--;
+    if(Q.tail < 0) Q.head = Q.tail = -1;
+}
+
+void viewQueue(Queue Q){
+    if(isEmpty(Q)){ cout<<"(kosong)\n"; return; }
+    for(int i=Q.head;i<=Q.tail;i++){
+        cout<<i+1<<". "<<Q.data[i].Resi<<" | "
+            <<Q.data[i].Pengirim<<" | "
+            <<Q.data[i].Berat<<"kg | "
+            <<Q.data[i].Tujuan<<"\n";
+    }
+}
+
+long long totalBiaya(Queue Q){
+    long long t = 0;
+    for(int i=Q.head;i<=Q.tail;i++)
+        t += Q.data[i].Berat * 8250LL;
+    return t;
+}
+```
+
+
+### c. [Main Program]
+
+```C++
+#include <iostream>
+#include "QueuePengiriman.h"
+using namespace std;
+
+int main(){
+    Queue Q; createQueue(Q);
+    Paket p;
+
+    enQueue(Q, {"123456","Hutao","Sumeru",14});
+    enQueue(Q, {"234567","Ayaka","Fontaine",10});
+    enQueue(Q, {"345678","Bennet","Natlan",7});
+    enQueue(Q, {"456789","Furina","Liyue",16});
+    enQueue(Q, {"567890","Nefer","Inazuma",6});
+
+    cout<<"Awal:\n"; viewQueue(Q);
+
+    deQueue(Q,p);
+    cout<<"\nSetelah deQueue:\n"; viewQueue(Q);
+
+    cout<<"\nTotal Biaya: Rp "<<totalBiaya(Q)<<"\n";
+}
+}
+```
+#### Output Soal 1:
+<img width="1544" height="615" alt="Screenshot 2025-11-20 092320" src="https://github.com/user-attachments/assets/7c1b49d7-c22b-4266-84d4-fde5700c3e67" />
 
