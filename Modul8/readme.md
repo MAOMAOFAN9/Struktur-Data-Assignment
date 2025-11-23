@@ -1,4 +1,4 @@
-# <h1 align="center">Laporan Praktikum Modul 7 - Queue</h1>
+# <h1 align="center">Laporan Praktikum Modul 8 - Queue</h1>
 <p align="center">Rafhael Januar Turnip - 103112400209</p>
 
 ## Dasar Teori
