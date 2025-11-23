@@ -675,6 +675,9 @@ jauh lebih ringan. Namun ada kekurangan: ruang kosong yang muncul di bagian depa
 3. Pada alternatif ketiga, program menggunakan konsep circular queue. Di sini, posisi head dan tail tidak berhenti di ujung array, tetapi bisa kembali ke awal menggunakan operasi modulo. Pendekatan ini membuat 
 pemanfaatan array jauh lebih optimal karena ruang yang sebelumnya tidak terpakai dapat digunakan kembali.
 
+## Kesimpulan
+Pada modul kali ini, kita mempelajari queue yaitu sebuah antrian yang menerapkan sistem FIFO yaitu First In First Out berbeda dengan stack kemarin yang menerapkan sistem LIFO Last In First Out. Pada pembuatannya juga ada beberapa implementasi yaitu ada 3 implementasi.
+
 ## Referensi
 [1]Implementasi Struktur Data Antrian Queue dalam Sistem Penjadwalan Proses pada Sistem Operasi Oleh Azura Trijayanti&sup1;, Intan Aulia&sup2;, Nazwa Khairunisa&sup3;, Farhan Asyrof Hamadi Purba&sup4;, Indra Gunawan&sup5;. diakses pada tanggal 23 November 2025 melalui: <br>
 [](https://journalcenter.org/index.php/jupti)<br>
