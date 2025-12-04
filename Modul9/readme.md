@@ -722,7 +722,7 @@ https://media.neliti.com/media/publications/227384-penerapan-algorithma-pohon-un
 [2]Randomized Binary Search Trees Oleh Conrado Mart´InezZ&sup1;, Salvado Roura&sup2;. diakses pada tanggal 04 Desember 2025 melalui: <br>
 https://www.cs.upc.edu/~conrado/research/papers/jacm-mr98.pdf?
 
-[3]Find maximum (or minimum) in Binary Tree Oleh kartik&sup2;. diakses pada tanggal 04 Desember 2025 melalui: <br>
+[3]Find maximum (or minimum) in Binary Tree Oleh kartik&sup1;. diakses pada tanggal 04 Desember 2025 melalui: <br>
 https://www.geeksforgeeks.org/dsa/find-maximum-or-minimum-in-binary-tree/
 
 
