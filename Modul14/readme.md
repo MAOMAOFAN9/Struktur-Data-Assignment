@@ -957,10 +957,10 @@ Ketiga latihan pada Modul 14 berfokus pada pengelolaan data menggunakan struktur
 Pada materi ini, membahas beberapa fungsi pada graph seperti insertNode, connectNode, serta penelusuran graph menggunakan DFS dan BFS. DFS melakukan penelusuran dengan bantuan stack, sedangkan BFS menggunakan queue. Meskipun tanpa fungsi alokasi, findNode, dan resetVisited, proses tetap dapat berjalan dengan memodifikasi fungsi insertNode dan menginisialisasi nilai visited = 0 pada awal proses DFS dan BFS.
 
 ## Referensi
-[1]MENGIDENTIFIKASI POLA KONSUMSI ENERGI RUMAH TANGGA MENGGUNAKAN ALGORITMA GRAFBERBASIS C++ Oleh Alvin Hafiz &sup1;, Fadilla Amanah &sup2;, Revi Damurti &sup3;, Putri HarlianaIlmu Komputer&sup4;. diakses pada tanggal 18 Desember 2025 melalui: <br>
+[1]MENGIDENTIFIKASI POLA KONSUMSI ENERGI RUMAH TANGGA MENGGUNAKAN ALGORITMA GRAFBERBASIS C++ Oleh Alvin Hafiz&sup1;, Fadilla Amanah&sup2;, Revi Damurti&sup3;, Putri HarlianaIlmu Komputer&sup4;. diakses pada tanggal 18 Desember 2025 melalui: <br>
 https://www.ejournal.itn.ac.id/jati/article/view/11788/6637.
 
-[2]Struktur Data Dan Algoritma Dengan C++ (Vol. 1). CV. AA. RIZKY. Oleh Anita Sindar &sup1;. diakses pada tanggal 18 Desember 2025 melalui: <br>
+[2]Struktur Data Dan Algoritma Dengan C++ (Vol. 1). CV. AA. RIZKY. Oleh Anita Sindar&sup1;. diakses pada tanggal 18 Desember 2025 melalui: <br>
 https://www.researchgate.net/publication/337657500_STRUKTUR_DATA_DAN_ALGORITMA_DENGAN_C#page=19.26
 
 
