@@ -1,0 +1,2 @@
+akhir" << endl;
+        break;
